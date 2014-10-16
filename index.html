@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>To 8:46 and Beyond !!</title>
+</head>
+
+<body>
+    <style>
+        @-webkit-keyframes AA_Highlight {
+            0% {
+                background: rgba(0,0,0,0);
+                color: black;
+            }
+
+            50% {
+                background: rgba(255,0,0,0.3);
+                color: white;
+            }
+
+            100% {
+                background: rgba(0,0,0,0);
+                color: black;
+            }
+        }
+
+        @keyframes AA_Highlight {
+            0% {
+                background: rgba(0,0,0,0);
+                color: black;
+            }
+
+            50% {
+                background: rgba(255,0,0,0.3);
+                color: white;
+            }
+
+            100% {
+                background: rgba(0,0,0,0);
+                color: black;
+            }
+        }
+
+        @-webkit-keyframes AA_Win8_Rotate {
+            from {
+                margin-left: 100px;
+                opacity: 0;
+                transform: rotateY(-180deg);
+            }
+
+            to {
+                margin-left: 0px;
+                opacity: 1;
+                transform: rotateY(0deg);
+            }
+        }
+
+        @keyframes AA_Win8_Rotate {
+            from {
+                margin-left: 100px;
+                opacity: 0;
+                transform: rotateY(-180deg);
+            }
+
+            to {
+                margin-left: 0px;
+                opacity: 1;
+                transform: rotateY(0deg);
+            }
+        }
+
+        @-webkit-keyframes AA_ShowEffect {
+            from {
+                opacity: 0;
+                margin-left: 100px;
+            }
+
+            to {
+                opacity: 1;
+                margin-top: 0px;
+            }
+        }
+
+
+        @keyframes AA_ShowEffect {
+            from {
+                opacity: 0;
+                margin-left: 100px;
+            }
+
+            to {
+                opacity: 1;
+                margin-top: 0px;
+            }
+        }
+
+        @-webkit-keyframes AA_HideEffect {
+            from {
+                opacity: 1;
+                margin-top: 0px;
+            }
+
+            to {
+                opacity: 0;
+                margin-top: -10px;
+                -webkit-transform: perspective( 600px ) rotateX( -5deg );
+            }
+        }
+
+        @keyframes AA_HideEffect {
+            from {
+                opacity: 1;
+                margin-top: 0px;
+            }
+
+            to {
+                opacity: 0;
+                margin-top: -100px;
+                transform: perspective( 600px ) rotateX( -5deg );
+            }
+        }
+
+
+        @-webkit-keyframes InnerTileAnimation {
+
+            to {
+                -webkit-transform: perspective( 600px ) rotateX( -360deg );
+            }
+        }
+
+        @keyframes InnerTileAnimation {
+
+            to {
+                transform: perspective( 600px ) rotateX(-360deg );
+            }
+        }
+
+
+        .The_Wall {
+            width: 1400px;
+            margin: 0 auto;
+        }
+
+        .Tiles {
+            text-align: center;
+            float: left;
+            margin: 5px;
+            width: 260px;
+            box-sizing: border-box;
+        }
+
+            .Tiles > .front {
+                position: absolute;
+                width: 260px;
+                height: 128px;
+                color: red;
+                border-radius: 2px;
+                border-style: solid;
+                border-color: black;
+                -webkit-backface-visibility: hidden;
+                backface-visibility: hidden;
+                -webkit-transform: perspective( 600px ) rotateY( 20deg );
+                transform: perspective( 600px ) rotateY( 20deg );
+                transition: -webkit-transform 0.3s cubic-bezier(.9,.25,.25,.9);
+                transition: transform 0.3s cubic-bezier(.9,.25,.25,.9);
+            }
+
+            .Tiles > .back {
+                position: absolute;
+                width: 260px;
+                height: 128px;
+                border-radius: 2px;
+                border-style: solid;
+                border-color: red;
+                -webkit-backface-visibility: hidden;
+                backface-visibility: hidden;
+                -webkit-transform: perspective( 600px ) rotateY( 200deg );
+                transform: perspective( 600px ) rotateY( 200deg );
+                transition: -webkit-transform 0.3s cubic-bezier(.9,.25,.25,.9);
+                transition: transform 0.3s cubic-bezier(.9,.25,.25,.9);
+            }
+
+            .Tiles:hover > .front {
+                -webkit-transform: perspective( 600px ) rotateY( -180deg );
+                transform: perspective( 600px ) rotateY( -180deg );
+            }
+
+            .Tiles:hover > .back {
+                -webkit-transform: perspective( 600px ) rotateY( 20deg );
+                transform: perspective( 600px ) rotateY( 20deg );
+            }
+
+
+
+        .Bottom_Section {
+            width: 1350px;
+            position: absolute;
+            margin-top: 180px;
+            clear: both;
+            padding: 10px;
+        }
+
+            .Bottom_Section > .Bottom_Left, .Bottom_Section > .Bottom_Right {
+                float:left;
+                display: table;
+                margin: 0 auto;
+                margin-top: 150px;
+                padding: 10px;
+            }
+
+        .Bottom_Left {
+            width: 400px;
+            margin-right: 10px;
+        }
+
+        .Bottom_Right {
+            margin-bottom: 30px;
+            width: 900px;
+        }
+
+        .Bottom_LeftShow {
+            animation: AA_ShowEffect 500ms cubic-bezier(.24,.59,.26,.94);
+            -webkit-animation: AA_ShowEffect 500ms cubic-bezier(.24,.59,.26,.94);
+            animation-fill-mode: forwards;
+            -webkit-animation-fill-mode: forwards;
+        }
+
+        .Bottom_LeftHide {
+            animation: AA_HideEffect 500ms cubic-bezier(.24,.59,.26,.94);
+            -webkit-animation: AA_HideEffect 500ms cubic-bezier(.24,.59,.26,.94);
+            animation-fill-mode: forwards;
+            -webkit-animation-fill-mode: forwards;
+        }
+
+        .IN_Title {
+            margin-top: 37px;
+        }
+
+        .Tiles .back > div {
+            margin-left: 200px;
+            margin-top: 50px;
+        }
+
+        .Tiles .front > div {
+            margin-left: 100px;
+            margin-top: 50px;
+        }
+
+        .Tiles:hover > .back > div, .Tiles:hover .front > div {
+            margin-left: -100px;
+        }
+
+        div {
+            -webkit-transition: margin 2.5s cubic-bezier(.24,.59,.26,.94);
+            transition: margin 2.5s cubic-bezier(.24,.59,.26,.94);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .InnerTile {
+            cursor: pointer;
+            text-align: center;
+            float: left;
+            border-style: solid;
+            border-color: red;
+            border-radius: 75px;
+            box-sizing: border-box;
+            background-color: #DEDEDE;
+            width: 150px;
+            height: 150px;
+            animation: AA_Win8_Rotate 500ms;
+            -webkit-animation: AA_Win8_Rotate 500ms;
+            animation-timing-function: cubic-bezier(0.055, 0.865, 0.075, 1.000);
+            -webkit-animation-timing-function: cubic-bezier(0.055, 0.865, 0.075, 1.000);
+            animation-fill-mode: forwards;
+            -webkit-animation-fill-mode: forwards;
+            margin-right: 10px;
+            margin-bottom:10px;
+        }
+
+        .IN_Title {
+            margin-top: 60px;
+        }
+
+        .InnerTileAnimationClick {
+            animation: InnerTileAnimation 500ms cubic-bezier(.24,.59,.26,.94);
+            -webkit-animation: InnerTileAnimation 500ms cubic-bezier(.24,.59,.26,.94);
+        }
+
+        .ActualContent {
+            height: 600px;
+            background-size: contain;
+            padding: 20px;
+            color:black;
+        }
+    </style>
+    <div class="The_Wall">
+        <div class="Top_Section">
+            <div class="Tiles" data-tilecount="1">
+                <div class="back">
+                    <div>Discussion Points</div>
+                </div>
+                <div class="front">
+                    <div>Huddle</div>
+                    <div class="hidden">
+                        <div class="InnerTile">
+                            <div class="IN_Title">Person 2</div>
+                            <div>This is person two</div>
+                        </div>
+                        <div class="InnerTile">
+                            <div class="IN_Title">Person 2</div>
+                            <div>This is person two</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="Tiles" data-tilecount="2">
+                <div class="back">
+                    <div>#Who #What #When</div>
+                </div>
+                <div class="front">
+                    <div>Minutes of Meeting</div>
+                    <div class="hidden">
+                        <div class="InnerTile">
+                            <div class="IN_Title">Anuraag</div>
+                            <div class="ActualContent" data-innertilecount="1">
+Gots, you'd soon lead our gang. Thoda hatta khatta ban, and then your era will begin. You are mast bae pattae.
+                            </div>
+                        </div>
+                        <div class="InnerTile">
+                            <div class="IN_Title">Babesh</div>
+                            <div class="ActualContent" data-innertilecount="2">
+Babes, vallikkal icchirri kurakkyue. Ennettu namakky koodam. ;)
+                            </div>
+                        </div>
+                        <div class="InnerTile">
+                            <div class="IN_Title">Deepanshu</div>
+                            <div class="ActualContent" data-innertilecount="3">
+Your poor jokes still echo in my head. I can still feel the pain.
+                            </div>
+                        </div>
+                        <div class="InnerTile">
+                            <div class="IN_Title">Esha</div>
+                            <div class="ActualContent" data-innertilecount="4">
+Tu fikar not, gaaon waalae tera achha khayaal rakhengae.
+                            </div>
+                        </div>
+                        <div class="InnerTile">
+                            <div class="IN_Title">Faiz</div>
+                            <div class="ActualContent" data-innertilecount="5">
+Dude, maal lekae aana. Aaj dimaag satak gaya.
+                            </div>
+                        </div>
+                        <div class="InnerTile">
+                            <div class="IN_Title">Geetha</div>
+                            <div class="ActualContent" data-innertilecount="6">
+                            </div>
+                        </div>
+                        <div class="InnerTile">
+                            <div class="IN_Title">Karan</div>
+                            <div class="ActualContent" data-innertilecount="7">
+                            </div>
+                        </div>
+                        <div class="InnerTile">
+                            <div class="IN_Title">Keshav</div>
+                            <div class="ActualContent" data-innertilecount="8">
+                            </div>
+                        </div>
+                        <div class="InnerTile">
+                            <div class="IN_Title">Lokenath</div>
+                            <div class="ActualContent" data-innertilecount="9">
+                            </div>
+                        </div>
+                        <div class="InnerTile">
+                            <div class="IN_Title">Megha</div>
+                            <div class="ActualContent" data-innertilecount="19">
+                            </div>
+                        </div>
+                        <div class="InnerTile">
+                            <div class="IN_Title">Murtuza</div>
+                            <div class="ActualContent" data-innertilecount="10">
+                            </div>
+                        </div>
+                        <div class="InnerTile">
+                            <div class="IN_Title">Neeraja</div>
+                            <div class="ActualContent" data-innertilecount="11">
+                            </div>
+                        </div>
+                        <div class="InnerTile">
+                            <div class="IN_Title">Nitin</div>
+                            <div class="ActualContent" data-innertilecount="20">
+                            </div>
+                        </div>
+                        <div class="InnerTile">
+                            <div class="IN_Title">Pallavi</div>
+                            <div class="ActualContent" data-innertilecount="12">
+                            </div>
+                        </div>
+                        <div class="InnerTile">
+                            <div class="IN_Title">Pratik</div>
+                            <div class="ActualContent" data-innertilecount="13">
+                            </div>
+                        </div>
+                        <div class="InnerTile">
+                            <div class="IN_Title">Rahul</div>
+                            <div class="ActualContent" data-innertilecount="14">
+                            </div>
+                        </div>
+                        <div class="InnerTile">
+                            <div class="IN_Title">Saipriya</div>
+                            <div class="ActualContent" data-innertilecount="15">
+                            </div>
+                        </div>
+                        <div class="InnerTile">
+                            <div class="IN_Title">Sam</div>
+                            <div class="ActualContent" data-innertilecount="16">
+                            </div>
+                        </div>
+                        <div class="InnerTile">
+                            <div class="IN_Title">Saswat</div>
+                            <div class="ActualContent" data-innertilecount="17">
+                            </div>
+                        </div>
+                        <div class="InnerTile">
+                            <div class="IN_Title">Sneha</div>
+                            <div class="ActualContent" data-innertilecount="18">
+                                <div class="ActualTextContent">She is the lively girl at MAQ. She is the liviliest girl at MAQ She is the liviliest girl at MAQShe is the liviliest girl at MAQ </br>AAAAAAAAAAAAAAAAAAAAAAAAAAAAA </br></br> She is the liviliest girl at MAQ</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="Tiles" data-tilecount="3">
+                <div class="back">
+                    <div>Execution Summary</div>
+                </div>
+                <div class="front">
+                    <div>Status Update</div>
+                    <div class="hidden">
+                        <div class="InnerTile">
+                            <div class="IN_Title">Person 1</div>
+                            <div>This is person one</div>
+                        </div>
+                        <div class="InnerTile">
+                            <div class="IN_Title">Person 1</div>
+                            <div>This is person one</div>
+                        </div>
+                        <div class="InnerTile">
+                            <div class="IN_Title">Person 2</div>
+                            <div>This is person two</div>
+                        </div>
+                        <div class="InnerTile">
+                            <div class="IN_Title">Person 2</div>
+                            <div>This is person two</div>
+                        </div>
+                        <div class="InnerTile">
+                            <div class="IN_Title">Person 2</div>
+                            <div>This is person two</div>
+                        </div>
+                        <div class="InnerTile">
+                            <div class="IN_Title">Person 2</div>
+                            <div>This is person two</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="Tiles" data-tilecount="4">
+                <div class="back">
+                    <div>Philosophy</div>
+                </div>
+                <div class="front">
+                    <div>KT session</div>
+                    <div class="hidden">
+                        <div class="InnerTile">
+                            <div class="IN_Title">Person 2</div>
+                            <div>This is person two</div>
+                        </div>
+                        <div class="InnerTile">
+                            <div class="IN_Title">Person 2</div>
+                            <div>This is person two</div>
+                        </div>
+                        <div class="InnerTile">
+                            <div class="IN_Title">Person 2</div>
+                            <div>This is person two</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="Tiles" data-tilecount="5">
+                <div class="back">
+                    <div>Ping me</div>
+                </div>
+                <div class="front">
+                    <div>Contact</div>
+                    <div class="hidden">
+                        <div class="InnerTile">
+                            <div class="IN_Title">Person 2</div>
+                            <div>This is person two</div>
+                        </div>
+                        <div class="InnerTile">
+                            <div class="IN_Title">Person 2</div>
+                            <div>This is person two</div>
+                        </div>
+                        <div class="InnerTile">
+                            <div class="IN_Title">Person 2</div>
+                            <div>This is person two</div>
+                        </div>
+                        <div class="InnerTile">
+                            <div class="IN_Title">Person 2</div>
+                            <div>This is person two</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="Bottom_Section">
+            <div class="Bottom_Left">
+                <div class="Bottom_Left_Wrapper"></div>
+            </div>
+            <div class="Bottom_Right">
+                <div class="Bottom_Right_Wrapper"></div>
+            </div>            
+        </div>
+    </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"> </script>
+    <script>
+        var sCurrentTile;
+        var sPreviousTile;
+        var bRefresh = true;
+        var imageLinkIndex;
+        var oImageLinks = {
+            1: 'http://i.imgur.com/AyF7p7M.jpg',
+            2: 'http://i.imgur.com/AU8zkYg.jpg',
+            3: 'http://i.imgur.com/pjl4o3G.jpg',
+            4: 'http://i.imgur.com/PIo7Owy.jpg',
+            5: 'http://i.imgur.com/SH93hlp.jpg',
+            6: 'http://i.imgur.com/frwJMXo.jpg',
+            7: 'http://i.imgur.com/eN1EWQj.jpg',
+            8: 'http://i.imgur.com/EG4GJp9.jpg',
+            9: 'http://i.imgur.com/dwk8MuC.jpg',
+            10: 'http://i.imgur.com/vbLLAXZ.jpg',
+            11: 'http://i.imgur.com/gkVkFg8.jpg',
+            12: 'http://i.imgur.com/AzSh8qJ.jpg',
+            13: 'http://i.imgur.com/4hluk7v.jpg',
+            14: 'http://i.imgur.com/7BX2zHY.jpg',
+            15: 'http://i.imgur.com/G7LMwZJ.jpg',
+            16: 'http://i.imgur.com/QBXHTUV.jpg',
+            17: 'http://i.imgur.com/vOtjyX5.jpg',
+            18: 'http://i.imgur.com/7brxkJW.jpg',
+            19: 'http://i.imgur.com/iLYlx6r.jpg',
+            20: 'http://i.imgur.com/Vv70pre.jpg'
+        };
+
+        $(document).ready(function () {
+            $(".Bottom_Section > .Bottom_Left, .Bottom_Section > .Bottom_Right").css("margin-top", "5px");
+            $(".InnerTile > div:not(:first-child)").addClass('hidden');
+            $('.Tiles').click(function () {
+                if (sCurrentTile === undefined) {
+                    sCurrentTile = $(this).data('tilecount');
+                    sPreviousTile = sCurrentTile;
+                    bRefresh = true;
+                }
+                else {
+                    sCurrentTile = $(this).data('tilecount');
+                    bRefresh = sCurrentTile === sPreviousTile ? false : true;
+                    sPreviousTile = sCurrentTile;
+                }
+                if (bRefresh) {
+                    $('.IN_Title').css('margin-left', '600px').css('margin-left', '0px');
+                    $(".Bottom_Right_Wrapper").html($(this).find(".hidden").html());
+                    $(".Bottom_Left_Wrapper").find(".Bottom_LeftShow").removeClass('Bottom_LeftShow').addClass('Bottom_LeftHide');
+                    $(".InnerTile").click(function () {
+                        $(this).css('border-color', 'black').css('color', 'red').addClass('InnerTileAnimationClick');
+                        $(".Bottom_Left_Wrapper").html($(this).find(".hidden")[0].outerHTML);
+                        imageLinkIndex = $(this).find(".hidden").data('innertilecount');
+                        $(".Bottom_Left_Wrapper").find(".hidden").removeClass('hidden').addClass('Bottom_LeftShow');
+                        $(".Bottom_LeftShow").css('background', "url(" + oImageLinks[imageLinkIndex] + ") no-repeat").css('background-size', 'contain');
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
