@@ -1,0 +1,133 @@
+﻿@using CCOM.Sso.Helpers
+@using IMAnnualReview.Utility
+@using IMAnnualReview.Domain.Live;
+
+<!DOCTYPE html>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<html lang="@LocalizationHelper.Lang">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    @RenderSection("meta", required: false)
+    <title>@ViewBag.Title</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <link rel="stylesheet" href="~/Content/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="~/Content/bootstrap-theme.css" type="text/css" />
+    <link rel="stylesheet" href="~/Content/Site.css" type="text/css" />
+    <link rel="stylesheet" href="~/Content/Gridmvc.css" type="text/css" />
+
+    <script src="~/Scripts/jquery-2.1.0.js"></script>
+    <script src="~/Scripts/AutoComplete.js"></script>
+    <script src="~/Scripts/globalize.js"></script>
+    <script src="~/Scripts/globalize/cultures/globalize.culture.en-US.js"></script>
+    <script src="~/Scripts/Dialog.js"></script>
+    <script src="~/Scripts/bootstrap-datepicker.js"></script>
+    <script src="~/Scripts/bootstrap-timepicker.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script src="~/Scripts/filebutton.js"></script>
+    <script src="~/Scripts/globalize-datepicker.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    @*<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>*@
+    <script src="~/Scripts/validation.js"></script>
+    <script src="~/Scripts/gridmvc.js"></script>
+
+    @Html.Partial("_html5shiv")
+
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+</head>
+<body role="document">
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <div class="capitalLogo">
+                </div>
+                <a class="navbar-brand" href="@SsoLinkExtensions.GetSsoCrossSiteUrl(SsoLinkExtensions.SiteLocation.Development, "AskIM", "Index", "Home")">AskIM</a>
+                <a class="navbar-brand" href="#">IMAnnualReview</a>
+                <div class="navbar-collapse collapse">
+                    <p class="navbar-text pull-right">
+                        @Html.Partial("_LogOnPartial")
+                    </p>
+                    <ul class="nav navbar-nav">
+                        <li class="@ActiveItem("Index", "Home", "")">@Html.ActionLink("Home", "Index", "Home", new { area = "" }, null)</li>
+                        <li class="@ActiveItem("Theme", "Home", "")">@Html.ActionLink("Theme", "Theme", "Home", new { area = "" }, null)</li>
+                        <li class="@ActiveItem("Inputs", "Home", "")">@Html.ActionLink("Inputs", "Inputs", "Home", new { area = "" }, null)</li>
+                        <li class="@ActiveItem("Grid", "Home", "")">@Html.ActionLink("Grid", "Grid", "Home", new { area = "" }, null)</li>
+
+                        @if (AppSession.RoleList != null)
+                        {
+                            if (AppSession.RoleList.Contains("Admin"))
+                            {
+                                <li class="active">@Html.ActionLink("Admin", "Index", "AppUser")</li>
+                            }
+                        }
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <ul class="nav nav-pills">
+            <li class="@((ViewContext.RouteData.Values["Controller"].ToString() == "AppUser" ?
+                "active" : string.Empty))">
+                @Html.ActionLink("Users", "", "AppUser", new { area = "admin" }, null)
+            </li>
+            <li class="@((ViewContext.RouteData.Values["Controller"].ToString() == "AppSecurityLog" ?
+                "active" : string.Empty))">
+                @Html.ActionLink("Security Log", "", "AppSecurityLog", new { area = "admin" }, null)
+            </li>
+
+            @if (AppSession.RoleList != null)
+            {
+                if (AppSession.RoleList.Contains("Developer"))
+                {
+                    <li class="@((ViewContext.RouteData.Values["Controller"].ToString() == "AppRole" ?
+                             "active" : string.Empty))">
+                        @Html.ActionLink("Roles", "", "AppRole", new { area = "admin" }, null)
+                    </li>
+
+                    <li class="@((ViewContext.RouteData.Values["Controller"].ToString() == "AppLog" ?
+                            "active" : string.Empty))">
+                        @Html.ActionLink("Log", "", "AppLog", new { area = "admin" }, null)
+                    </li>
+                }
+            }
+        </ul>
+        <br />
+        @*@HttpContext.Current.Session["UserFullName"]  *@
+        @RenderBody()
+    </div>
+    <div id="footer">
+        <div class="container">
+            <p class="muted credit text-center">
+                <a href="http://www.medicine.uiowa.edu" target="_blank">University of Iowa Carver College of Medicine</a> |
+                <a href="http://www.medicine.uiowa.edu/it_sub.aspx?id=327" target="_blank">CCOM Application Development</a>
+            </p>
+        </div>
+    </div> <!-- /container -->
+    @*@Html.Partial("_RouteData")*@
+
+</body>
+</html>
+
+@helper ActiveItem(string areaName)
+{
+    if (ViewContext.RouteData.DataTokens["area"] == null ||
+        ViewContext.RouteData.DataTokens["area"].ToString() == areaName)
+    {
+        @:text-decoration: none; background-color: #e3e3e3; color: #245269;
+    }
+}
+
+@helper ActiveItem(string actionName, string controllerName, string areaName)
+{
+    if (ViewContext.RouteData.Values["action"].ToString() == actionName &&
+        ViewContext.RouteData.Values["controller"].ToString() == controllerName &&
+            (ViewContext.RouteData.DataTokens["area"] == null ||
+            ViewContext.RouteData.DataTokens["area"].ToString() == areaName))
+    {
+        @:active
+    }
+}

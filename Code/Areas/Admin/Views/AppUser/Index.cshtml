@@ -1,0 +1,213 @@
+@model IEnumerable<IMAnnualReview.Domain.Entities.AppUser>
+
+@{
+    ViewBag.Title = "Users";
+}
+
+<div id='dialogDiv' class='modal fade'>
+    <div id='dialogContent' class="modal-dialog"></div>
+</div>
+
+<p>             
+    @Html.ActionLink("Create New", "Create", null, null, new { @class = "btn btn-default btnCreate" })  
+    <noscript>
+        <style type="text/css">
+            .openDialog
+            {
+                display: none;
+            }
+        </style>               
+        @Html.ActionLink("Create New", "Create", null, new { @class="btn" })
+    </noscript> 
+</p>
+<table class="table table-striped">
+    <tr>
+        <th>
+            UserId
+        </th>
+        <th>
+            Email
+        </th>
+        <th>
+            First Name
+        </th>
+        <th>
+            Last Name
+        </th>
+        <th>
+            Active
+        </th>
+        <th>
+            Updated By
+        </th>
+        <th>
+            Date Updated
+        </th>
+        <th>
+            Created By
+        </th>
+        <th>
+            Date Created
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Active)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UpdatedBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateUpdated)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateCreated)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", null, new { id = item.AppUserId }, new { @class = "btn btn-default btn-sm btnCreate" })             
+            <noscript>
+                <style type="text/css">
+                    .openDialog
+                    {
+                        display: none;
+                    }
+                </style>               
+                @Html.ActionLink("Edit", "Edit", new { id=item.AppUserId }) |
+            </noscript>            
+
+            @Html.ActionLink("Details", "Details", null, new { id = item.AppUserId }, new { @class = "btn btn-default btn-sm btnCreate" })            
+            <noscript>
+                <style type="text/css">
+                    .openDialog
+                    {
+                        display: none;
+                    }
+                </style>               
+                @Html.ActionLink("Details", "Details", new { id=item.AppUserId }) |
+            </noscript>  
+
+            @Html.ActionLink("Delete", "Delete", null, new { id = item.AppUserId }, new { @class = "btn btn-default btn-sm btn-danger btnCreate" })                       
+            <noscript>
+                <style type="text/css">
+                    .openDialog
+                    {
+                        display: none;
+                    }
+                </style>               
+                @Html.ActionLink("Delete", "Delete", new { id=item.AppUserId })
+            </noscript>  
+        </td>
+    </tr>
+}
+
+</table>
+
+@*@model IEnumerable<IMAnnualReview.Domain.Entities.AppUser>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="container" role="main">
+
+    <h2>Index</h2>
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+
+    <table class="table table-striped">
+        <tr>
+            <th></th>
+            <th>
+                UserId
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                FirstName
+            </th>
+            <th>
+                LastName
+            </th>
+            <th>
+                Active
+            </th>
+            <th>
+                UpdatedBy
+            </th>
+            <th>
+                DateUpdated
+            </th>
+            <th>
+                CreatedBy
+            </th>
+            <th>
+                DateCreated
+            </th>
+            <th>
+                AppUserRoles
+            </th>
+        </tr>
+
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.AppUserId }) |
+                @Html.ActionLink("Details", "Details", new { id=item.AppUserId }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.AppUserId })
+            </td>
+            <td>
+			    @item.UserId
+            </td>
+            <td>
+			    @item.Email
+            </td>
+            <td>
+			    @item.FirstName
+            </td>
+            <td>
+			    @item.LastName
+            </td>
+            <td>
+			    @item.Active
+            </td>
+            <td>
+			    @item.UpdatedBy
+            </td>
+            <td>
+			    @String.Format("{0:g}", item.DateUpdated)
+            </td>
+            <td>
+			    @item.CreatedBy
+            </td>
+            <td>
+			    @String.Format("{0:g}", item.DateCreated)
+            </td>
+            <td>
+			    @(item.AppUserRoles == null ? "None" : item.AppUserRoles.Count.ToString())
+            </td>
+        </tr>
+}
+    </table>
+</div>
+*@

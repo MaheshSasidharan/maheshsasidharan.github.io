@@ -1,0 +1,54 @@
+@model IMAnnualReview.Domain.Entities.AppRole
+
+@* This partial view defines form fields that will appear when creating and editing entities *@
+
+<div class="editor-field">
+    @Html.EditorFor(model => model.RoleName)
+    @Html.ValidationMessageFor(model => model.RoleName)
+</div>
+
+<div class="editor-field">
+    @Html.EditorFor(model => model.RoleAbbr)
+    @Html.ValidationMessageFor(model => model.RoleAbbr)
+</div>
+
+<div class="editor-field">
+    @Html.EditorFor(model => model.ShortDesc)
+    @Html.ValidationMessageFor(model => model.ShortDesc)
+</div>
+
+<div class="editor-field">
+    @Html.EditorFor(model => model.LongDesc)
+    @Html.ValidationMessageFor(model => model.LongDesc)
+</div>
+
+<div class="editor-field">
+    @Html.EditorFor(model => model.OrderBy)
+    @Html.ValidationMessageFor(model => model.OrderBy)
+</div>
+
+<div class="editor-field">
+    @Html.EditorFor(model => model.Active)
+    @Html.ValidationMessageFor(model => model.Active)
+</div>
+
+<div class="editor-field">
+    @Html.EditorFor(model => model.UpdatedBy)
+    @Html.ValidationMessageFor(model => model.UpdatedBy)
+</div>
+
+<div class="editor-field">
+    @Html.EditorFor(model => model.DateUpdated)
+    @Html.ValidationMessageFor(model => model.DateUpdated)
+</div>
+
+<div class="editor-field">
+    @Html.EditorFor(model => model.CreatedBy)
+    @Html.ValidationMessageFor(model => model.CreatedBy)
+</div>
+
+<div class="editor-field">
+    @Html.EditorFor(model => model.DateCreated)
+    @Html.ValidationMessageFor(model => model.DateCreated)
+</div>
+

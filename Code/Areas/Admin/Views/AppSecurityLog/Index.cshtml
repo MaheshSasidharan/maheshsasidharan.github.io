@@ -1,0 +1,130 @@
+@model PagedList.IPagedList<IMAnnualReview.Domain.Entities.AppSecurityLog>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="container" role="main">
+
+@using (Html.BeginForm())
+{
+    <p>
+        Search by username: <input type="text" name="SearchString" id="SearchString" value="@ViewBag.CurrentFilter" data-autocomplete="@Url.Action("AutoCompleteSearch","AppSecurityLog")" />  
+        <input type="submit" value="Search" class="btn btn-default"/>
+        <input id="resetBtnView" type="reset" value="Reset" class = "btn btn-default"> 
+    </p>
+}
+
+    <table class="table table-striped">
+        <tr>
+            @*<th></th>*@
+            <th>
+                Application
+            </th>
+            <th>
+                LogEntryType
+            </th>
+            <th>
+                @Html.ActionLink("Category", "Index", new { sortOrder=ViewBag.CategorySortParm })
+            </th>
+            <th>
+                LogLevel
+            </th>
+            <th>
+                Message
+            </th>
+            <th>
+                XmlMessage
+            </th>
+            <th>
+                Browser
+            </th>
+            <th>
+                IPAddress
+            </th>
+            <th>
+                @Html.ActionLink("Created", "Index", new { sortOrder=ViewBag.CreatedSortParm })
+            </th>
+            <th>
+                CreatedBy
+            </th>
+        </tr>
+
+@foreach (var item in Model) {
+        <tr>
+            @*<td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.AppSecurityLogId }) |
+                @Html.ActionLink("Details", "Details", new { id=item.AppSecurityLogId }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.AppSecurityLogId })
+            </td>*@
+            <td>
+			    @item.Application
+            </td>
+            <td>
+			    @item.LogEntryType
+            </td>
+            <td>
+			    @item.Category
+            </td>
+            <td>
+			    @item.LogLevel
+            </td>
+            <td>
+			    @item.Message
+            </td>
+            <td>
+			    @item.XmlMessage
+            </td>
+            <td>
+			    @item.Browser
+            </td>
+            <td>
+			    @item.IPAddress
+            </td>
+            <td>
+			    @String.Format("{0:g}", item.Created)
+            </td>
+            <td>
+			    @item.CreatedBy
+            </td>
+        </tr>
+}
+    </table>
+</div>
+<div>
+    <div id="vPageDiv">
+        <span class="btn btn-small btn-primary disabled">
+        Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)
+        of @Model.PageCount
+        </span>
+     
+        @if (Model.HasPreviousPage)
+        {
+            @Html.ActionLink("<<", "Index", new { page = 1, sortOrder = ViewBag.CurrentSort, currentFilter=ViewBag.CurrentFilter }, new { @class = "btn btn-small btn-primary" })
+            @Html.Raw(" ");
+            @Html.ActionLink("< Prev", "Index", new { page = Model.PageNumber - 1, sortOrder = ViewBag.CurrentSort, currentFilter=ViewBag.CurrentFilter }, new { @class = "btn btn-small btn-primary" })
+        }else{
+            <span class="btn btn-small btn-primary disabled"><< < Prev</span>
+        }
+     
+        @if (Model.HasNextPage)
+        {
+            @Html.ActionLink("Next >", "Index", new { page = Model.PageNumber + 1, sortOrder = ViewBag.CurrentSort, currentFilter=ViewBag.CurrentFilter }, new { @class = "btn btn-small btn-primary" })
+            @Html.Raw(" ");
+            @Html.ActionLink(">>", "Index", new { page = Model.PageCount, sortOrder = ViewBag.CurrentSort, currentFilter=ViewBag.CurrentFilter }, new { @class = "btn btn-small btn-primary" })
+        }else{
+            <span class="btn btn-small btn-primary disabled">Next > >></span>
+        }
+    </div>
+</div>
+<script type="text/javascript">
+    jQuery(function () {
+        $('#resetBtnView').click(function () {
+            var url = $(location).attr('href');
+            url = url.split('?')[0];
+            //alert("test" + url);
+            window.location = url;
+        });
+    });
+</script>
+

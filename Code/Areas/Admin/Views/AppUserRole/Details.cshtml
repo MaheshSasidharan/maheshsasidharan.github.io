@@ -1,0 +1,44 @@
+@model IMAnnualReview.Domain.Entities.AppUserRole
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="container" role="main">
+
+    <h2>Details</h2>
+
+    <fieldset>
+        <legend>AppUserRole</legend>
+
+        <div class="display-label"><b>AppUser</b></div>
+        <div class="display-field">@(Model.AppUser == null ? "None" : Model.AppUser.LastName)</div>
+
+        <div class="display-label"><b>AppRole</b></div>
+        <div class="display-field">@Html.DisplayTextFor(_ => Model.AppRole).ToString()</div>
+
+        <div class="display-label"><b>OrderBy</b></div>
+        <div class="display-field">@Model.OrderBy</div>
+
+        <div class="display-label"><b>Active</b></div>
+        <div class="display-field">@Model.Active</div>
+
+        <div class="display-label"><b>UpdatedBy</b></div>
+        <div class="display-field">@Model.UpdatedBy</div>
+
+        <div class="display-label"><b>DateUpdated</b></div>
+        <div class="display-field">@String.Format("{0:g}", Model.DateUpdated)</div>
+
+        <div class="display-label"><b>CreatedBy</b></div>
+        <div class="display-field">@Model.CreatedBy</div>
+
+        <div class="display-label"><b>DateCreated</b></div>
+        <div class="display-field">@String.Format("{0:g}", Model.DateCreated)</div>
+    </fieldset>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id=Model.AppUserRoleId }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+
+<div>
+

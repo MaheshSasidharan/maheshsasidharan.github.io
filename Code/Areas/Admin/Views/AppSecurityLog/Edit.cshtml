@@ -1,0 +1,30 @@
+@model IMAnnualReview.Domain.Entities.AppSecurityLog
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<div class="container" role="main">
+
+    <h2>Edit</h2>
+
+    @using (Html.BeginForm()) {
+        @Html.ValidationSummary(true)
+        <fieldset>
+            <legend>AppSecurityLog</legend>
+
+            @Html.HiddenFor(model => model.AppSecurityLogId)
+    		@Html.Partial("_CreateOrEdit", Model)
+
+            <p>
+                <input type="submit" value="Save" />
+            </p>
+        </fieldset>
+    }
+
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+
+</div>
+

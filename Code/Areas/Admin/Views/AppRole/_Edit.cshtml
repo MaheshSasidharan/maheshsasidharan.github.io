@@ -1,0 +1,39 @@
+﻿@model IMAnnualReview.Domain.Entities.AppRole
+
+<div class="modal-content">
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">Edit Role</h3>
+</div>
+
+@using (Ajax.BeginForm(new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "shadowDialog" }))
+{
+    @Html.ValidationSummary(true)
+
+    @Html.HiddenFor(model => model.AppRoleId)
+    <div  class="modal-body"> 
+        <div class="editor-field">
+            @Html.EditorFor(model => model.RoleName)            
+        </div>
+
+        <div class="editor-field">
+            @Html.EditorFor(model => model.RoleAbbr)            
+        </div>
+
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ShortDesc)            
+        </div>
+
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LongDesc)            
+        </div>
+
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Active)            
+        </div>
+        </div>
+        <div class="modal-footer">
+            <input type="submit" value="Save" class = "btn btn-default" />
+        </div>
+}
+</div>

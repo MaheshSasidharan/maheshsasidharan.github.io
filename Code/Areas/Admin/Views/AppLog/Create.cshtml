@@ -1,0 +1,28 @@
+@model IMAnnualReview.Domain.Entities.AppLog
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<div class="container" role="main">
+
+    <h2>Create</h2>
+
+    @using (Html.BeginForm()) {
+        @Html.ValidationSummary(true)
+        <fieldset>
+            <legend>AppLog</legend>
+
+		    @Html.Partial("_CreateOrEdit", Model)
+
+            <p>
+                <input type="submit" value="Create" />
+            </p>
+        </fieldset>
+    }
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+
+<div>
+

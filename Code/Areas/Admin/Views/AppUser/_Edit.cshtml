@@ -1,0 +1,81 @@
+﻿@model IMAnnualReview.Domain.Entities.AppUser        
+        
+<div class="modal-content">    
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">Edit User</h3>
+</div>   
+
+@using (Ajax.BeginForm(new AjaxOptions { HttpMethod = "POST" }))
+{
+    @Html.ValidationSummary(true)
+   @Html.HiddenFor(model => model.AppUserId)
+   <div  class="modal-body">
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UserId)
+        </div>
+        <div class="editor-field">            
+            @Html.TextBoxFor(model => model.UserId, new { @class = "form-control input-sm", maxlength = 10, @style = "width: 200px;" })
+            @Html.ValidationMessageFor(model => model.UserId)       
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Email)
+        </div>
+        <div class="editor-field">            
+            @Html.TextBoxFor(model => model.Email, new { @class = "form-control input-sm", maxlength = 50,  @style = "width: 300px;" })  
+            @Html.ValidationMessageFor(model => model.Email)            
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FirstName)
+        </div>
+        <div class="editor-field">            
+            @Html.TextBoxFor(model => model.FirstName, new { @class = "form-control input-sm", maxlength = 25, @style = "width: 200px;" })  
+            @Html.ValidationMessageFor(model => model.FirstName)            
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LastName)
+        </div>
+        <div class="editor-field">            
+            @Html.TextBoxFor(model => model.LastName, new { @class = "form-control input-sm", maxlength = 25, @style = "width: 200px;" })   
+            @Html.ValidationMessageFor(model => model.LastName)          
+        </div>
+
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Active) 
+            @Html.ValidationMessageFor(model => model.Active)            
+        </div>       
+        <div class="display-label">Roles</div>
+        <div class="editor-field">
+
+            <table>
+                <tr>
+                    @{
+        int cnt = 0;
+
+        foreach (var role in ViewBag.Roles)
+        {
+            if (cnt++ % 3 == 0)
+            {
+                @:  </tr> <tr> 
+                        }
+                        @: <td> 
+                            <input type="checkbox" 
+                                    name="selectedRoles" 
+                                    value="@role.AppRoleId"                                     
+                                    @(Html.Raw(role.Assigned ? "checked=\"checked\"" : "")) /> 
+                                @:  @role.RoleName
+                        @:</td>
+                    }
+                    @: </tr>
+             }
+        </table>
+        </div>
+    </div> 
+    <div class="modal-footer">
+        <input type="submit" value="Save" class="btn btn-default" />           
+    </div>
+}
+</div>

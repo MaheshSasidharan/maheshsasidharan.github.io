@@ -1,0 +1,50 @@
+@model IMAnnualReview.Domain.Entities.AppUser
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="container" role="main">
+
+    <h2>Details</h2>
+
+    <fieldset>
+        <legend>AppUser</legend>
+
+        <div class="display-label"><b>UserId</b></div>
+        <div class="display-field">@Model.UserId</div>
+
+        <div class="display-label"><b>Email</b></div>
+        <div class="display-field">@Model.Email</div>
+
+        <div class="display-label"><b>FirstName</b></div>
+        <div class="display-field">@Model.FirstName</div>
+
+        <div class="display-label"><b>LastName</b></div>
+        <div class="display-field">@Model.LastName</div>
+
+        <div class="display-label"><b>Active</b></div>
+        <div class="display-field">@Model.Active</div>
+
+        <div class="display-label"><b>UpdatedBy</b></div>
+        <div class="display-field">@Model.UpdatedBy</div>
+
+        <div class="display-label"><b>DateUpdated</b></div>
+        <div class="display-field">@String.Format("{0:g}", Model.DateUpdated)</div>
+
+        <div class="display-label"><b>CreatedBy</b></div>
+        <div class="display-field">@Model.CreatedBy</div>
+
+        <div class="display-label"><b>DateCreated</b></div>
+        <div class="display-field">@String.Format("{0:g}", Model.DateCreated)</div>
+
+        <div class="display-label"><b>AppUserRoles</b></div>
+        <div class="display-field">@(Model.AppUserRoles == null ? "None" : Model.AppUserRoles.Count.ToString())</div>
+    </fieldset>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id=Model.AppUserId }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+
+<div>
+

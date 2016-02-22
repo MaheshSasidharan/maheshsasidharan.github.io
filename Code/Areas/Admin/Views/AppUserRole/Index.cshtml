@@ -1,0 +1,79 @@
+@model IEnumerable<IMAnnualReview.Domain.Entities.AppUserRole>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="container" role="main">
+
+    <h2>Index</h2>
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+
+    <table class="table table-striped">
+        <tr>
+            <th></th>
+            <th>
+                AppUser
+            </th>
+            <th>
+                AppRole
+            </th>
+            <th>
+                OrderBy
+            </th>
+            <th>
+                Active
+            </th>
+            <th>
+                UpdatedBy
+            </th>
+            <th>
+                DateUpdated
+            </th>
+            <th>
+                CreatedBy
+            </th>
+            <th>
+                DateCreated
+            </th>
+        </tr>
+
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.AppUserRoleId }) |
+                @Html.ActionLink("Details", "Details", new { id=item.AppUserRoleId }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.AppUserRoleId })
+            </td>
+            <td>
+			    @(item.AppUser == null ? "None" : item.AppUser.LastName)
+            </td>
+            <td>
+			    @Html.DisplayTextFor(_ => item.AppRole).ToString()
+            </td>
+            <td>
+			    @item.OrderBy
+            </td>
+            <td>
+			    @item.Active
+            </td>
+            <td>
+			    @item.UpdatedBy
+            </td>
+            <td>
+			    @String.Format("{0:g}", item.DateUpdated)
+            </td>
+            <td>
+			    @item.CreatedBy
+            </td>
+            <td>
+			    @String.Format("{0:g}", item.DateCreated)
+            </td>
+        </tr>
+}
+    </table>
+</div>
+

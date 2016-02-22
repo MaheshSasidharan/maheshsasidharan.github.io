@@ -1,0 +1,50 @@
+@model IMAnnualReview.Domain.Entities.AppLog
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="container" role="main">
+
+    <h2>Details</h2>
+
+    <fieldset>
+        <legend>AppLog</legend>
+
+        <div class="display-label"><b>Application</b></div>
+        <div class="display-field">@Model.Application</div>
+
+        <div class="display-label"><b>LogEntryType</b></div>
+        <div class="display-field">@Model.LogEntryType</div>
+
+        <div class="display-label"><b>Category</b></div>
+        <div class="display-field">@Model.Category</div>
+
+        <div class="display-label"><b>LogLevel</b></div>
+        <div class="display-field">@Model.LogLevel</div>
+
+        <div class="display-label"><b>Message</b></div>
+        <div class="display-field">@Model.Message</div>
+
+        <div class="display-label"><b>XmlMessage</b></div>
+        <div class="display-field">@Model.XmlMessage</div>
+
+        <div class="display-label"><b>Browser</b></div>
+        <div class="display-field">@Model.Browser</div>
+
+        <div class="display-label"><b>IPAddress</b></div>
+        <div class="display-field">@Model.IPAddress</div>
+
+        <div class="display-label"><b>Created</b></div>
+        <div class="display-field">@String.Format("{0:g}", Model.Created)</div>
+
+        <div class="display-label"><b>CreatedBy</b></div>
+        <div class="display-field">@Model.CreatedBy</div>
+    </fieldset>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id=Model.AppLogId }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+
+<div>
+

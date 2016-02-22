@@ -1,0 +1,55 @@
+@model IMAnnualReview.Domain.Entities.AppSecurityLog
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<div class="container" role="main">
+
+    <h2>Delete</h2>
+
+    <h3>Are you sure you want to delete this?</h3>
+
+    <fieldset>
+        <legend>AppSecurityLog</legend>
+
+        <div class="display-label">Application</div>
+        <div class="display-field">@Model.Application</div>
+
+        <div class="display-label">LogEntryType</div>
+        <div class="display-field">@Model.LogEntryType</div>
+
+        <div class="display-label">Category</div>
+        <div class="display-field">@Model.Category</div>
+
+        <div class="display-label">LogLevel</div>
+        <div class="display-field">@Model.LogLevel</div>
+
+        <div class="display-label">Message</div>
+        <div class="display-field">@Model.Message</div>
+
+        <div class="display-label">XmlMessage</div>
+        <div class="display-field">@Model.XmlMessage</div>
+
+        <div class="display-label">Browser</div>
+        <div class="display-field">@Model.Browser</div>
+
+        <div class="display-label">IPAddress</div>
+        <div class="display-field">@Model.IPAddress</div>
+
+        <div class="display-label">Created</div>
+        <div class="display-field">@String.Format("{0:g}", Model.Created)</div>
+
+        <div class="display-label">CreatedBy</div>
+        <div class="display-field">@Model.CreatedBy</div>
+    </fieldset>
+
+    @using (Html.BeginForm()) {
+        <p>
+            <input type="submit" value="Delete" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+    }
+
+</div>
+
