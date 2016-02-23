@@ -1,0 +1,82 @@
+﻿@using CCOM
+@using CCOM.Entities
+
+@if (ViewContext.RouteData.DataTokens["area"] == null || (string)ViewContext.RouteData.DataTokens["area"] == "")
+{
+    <!-- Unauthenticated User Fixed navbar -->
+    <div class="navbar navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                @Html.ActionLink("IMAnnualReview", "Index", "Home", null, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li style="@ActiveItem("Theme", "Home", "")">@Html.ActionLink("Theme", "Theme", "Home", new { area = "" }, null)</li>
+                    <li style="@ActiveItem("Inputs", "Home", "")">@Html.ActionLink("Inputs", "Inputs", "Home", new { area = "" }, null)</li>
+                    <li style="@ActiveItem("Grid", "Home", "")">@Html.ActionLink("Grid", "Grid", "Home", new { area = "" }, null)</li>
+                    <li>@Html.ActionLink("Login", "Index", "Home", new { area = "Admin" }, null)</li>
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+    </div>
+}
+else if ((string) ViewContext.RouteData.DataTokens["area"] == "Admin")
+{
+    if (Request.IsAuthenticated)
+    {
+    <!-- Authenticated User Fixed navbar -->
+        <div class="navbar navbar-fixed-top" role="navigation">
+            <div class="navbar-header">
+                @Html.ActionLink("IMAnnualReview", "Index", "Home", new { @area = "Admin" }, new { @class = "navbar-brand" })
+            </div>
+            <ul class="nav navbar-nav">
+                <li style="@ActiveItem("Main")">
+                    @Html.ActionLink("Roles", "Index", "AppRole", new { area = "Admin" }, null)
+                </li>                
+                <li style="@ActiveItem("Main")">
+                    @Html.ActionLink("Users", "Index", "AppUser", new { area = "Admin" }, null)
+                </li>
+                <li style="@ActiveItem("Main")">
+                    @Html.ActionLink("User Roles", "Index", "AppUserRole", new { area = "Admin" }, null)
+                </li>
+                <li style="@ActiveItem("Main")">
+                    @Html.ActionLink("Log", "Index", "AppLog", new { area = "Admin" }, null)
+                </li>
+                <li style="@ActiveItem("Main")">
+                    @Html.ActionLink("Security Log", "Index", "AppSecurityLog", new { area = "Admin" }, null)
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    @Html.ActionLink(User.Identity.Name, "Details", "AppUser", new { id = ((AppIdentity)SessionFactory.SecuritySessionState().Principal.Identity).AppUserId, @area = "Admin" }, new { @class = "btn-sm" })
+                </li>
+                <li class="pull-left">
+                    @Html.ActionLink("Logoff", "LogOff", "Account", new { @area = "" }, new { @style = "padding-right: 30px;"})
+                </li>                    
+            </ul>
+        </div>
+    }
+}
+
+@helper ActiveItem(string areaName)
+{
+    if (ViewContext.RouteData.DataTokens["area"] == null ||
+        ViewContext.RouteData.DataTokens["area"].ToString() == areaName)
+    {
+        @:text-decoration: none; background-color: #e3e3e3; color: #245269;
+    }
+}
+
+@helper ActiveItem(string actionName, string controllerName, string areaName)
+{
+    if (ViewContext.RouteData.Values["action"].ToString() == actionName &&
+        ViewContext.RouteData.Values["controller"].ToString() == controllerName &&
+            (ViewContext.RouteData.DataTokens["area"] == null ||
+            ViewContext.RouteData.DataTokens["area"].ToString() == areaName))
+    {
+        @:text-decoration: none; background-color: #e3e3e3; color: #245269;
+    }
+}
+

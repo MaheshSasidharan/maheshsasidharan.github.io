@@ -1,0 +1,32 @@
+﻿<div class="AR_TabContentContainer">
+    <div class="AR_RH_Reviewer">
+        <div class="rh_Grid rh_RankHistory">
+            <div class="AR_GridHeaderLabel">Rank History</div>
+            <div class="chk_GridHeader">
+                <label>When Started</label>
+                <label>When Finished</label>
+                <label class="rh_Type">Type</label>
+            </div>
+            <div class="chk_row" ng-repeat="rankHistory in oRankHistory.arrRankHistory">
+                <label class="rh_labelWithBorder Ellipsis">{{rankHistory.WHEN_STARTED}}</label>
+                <label class="rh_labelWithBorder Ellipsis">{{rankHistory.WHEN_FINISHED}}</label>
+                <label class="rh_Type rh_labelWithBorder Ellipsis">{{rankHistory.TYPE}}</label>
+            </div>
+        </div>
+        <div class="rh_Grid rh_AppointmentHistory">
+            <div class="AR_GridHeaderLabel">Appointment History</div>
+            <div class="chk_GridHeader">
+                <label>When Started</label>
+                <label>When Finished</label>
+                <label class="rh_Length">Length</label>
+                <label class="rh_Extension">Extension</label>
+            </div>
+            <div class="chk_row" ng-repeat="appointmentHistory in oRankHistory.arrAppointmentHistory">
+                <input class="form-control" type="text" ng-model="appointmentHistory.WHEN_STARTED" ng-blur="appointmentHistory.SaveListItems()" />
+                <input class="form-control" type="text" ng-model="appointmentHistory.WHEN_ENDED" ng-blur="appointmentHistory.SaveListItems()" />
+                <input class="form-control" type="number" ng-model="appointmentHistory.LENGTH" ng-blur="appointmentHistory.SaveListItems()" />
+                <input type="checkbox" class="rh_Extension" ng-model="appointmentHistory.EXTENSION_Val" ng-change="appointmentHistory.SaveListItems()" />
+            </div>
+        </div>
+    </div>
+</div>

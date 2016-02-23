@@ -1,0 +1,13 @@
+﻿<div class="AR_TabContentContainer">
+    <div class="AR_REH_Reviewer">
+        <div class="AR_GridHeaderLabel">Appointment History</div>
+        <div class="chk_GridHeader">
+            <label>Review Cycle</label>
+            <label class="rh_Committee">Committee Action</label>
+        </div>
+        <div class="chk_row" ng-repeat="reviewHistory in oReviewHistory.arrReviewHistory">
+            <label class="rh_labelWithBorder">{{reviewHistory.AR_CYCLE}}</label>
+            <label class="rh_labelWithBorder rh_Committee">{{reviewHistory.COMM_ACTION}}</label>
+        </div>
+    </div>
+</div>
