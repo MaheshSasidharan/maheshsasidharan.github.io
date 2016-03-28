@@ -6,10 +6,12 @@ AnnualReview
         // Do not use in new projects.
         $sceProvider.enabled(false);
     })
-.controller('LayoutPage', ['$scope', '$timeout', 'Factory_CommonRoutines', 'Factory_Constants', LayoutPage])
+//.controller('LayoutPage', ['$scope', '$timeout', '$location', '$window', 'Factory_CommonRoutines', 'Factory_Constants', LayoutPage])
+.controller('LayoutPage', ['$scope', '$timeout', '$location', '$window', LayoutPage])
 
-function LayoutPage($scope, $timeout, CommonFactory, Constants) {
-    CommonFactory.Init($timeout, Constants);
+
+function LayoutPage($scope, $timeout, $location, $window) { //, CommonFactory, Constants) {
+    //CommonFactory.Init($timeout, Constants);
     // $scope.Notification = CommonFactory.Notification;
 
     var vm = $scope;
@@ -19,6 +21,7 @@ function LayoutPage($scope, $timeout, CommonFactory, Constants) {
     vm.oCurrentInnerTile = null;
     var bRefresh = true;
     var displayTile = null;
+
 
     vm.Tiles = [
         {
@@ -71,9 +74,18 @@ function LayoutPage($scope, $timeout, CommonFactory, Constants) {
                 title: "Question 4",
                 content: "Is the author trying to communicate some message through the chart?"
             }]
-        },
-        {
-            back: "Ping me",
+        }
+        
+    ];
+    
+    var showContact = $location.search().contact;
+    showContact = showContact === "y" ? true : false;
+
+
+    if (showContact) {
+
+        var contact = {
+            back: "Yellow Page",
             front: "Contact",
             innerContents: [{
                 title: "Facebook",
@@ -95,7 +107,9 @@ function LayoutPage($scope, $timeout, CommonFactory, Constants) {
                 content: "<a href='http://stackoverflow.com/users/1161370/mahesh' class='button-link' target='_blank'></a>"
             }]
         }
-    ];
+
+        vm.Tiles.push(contact);
+    }
     vm.Helper = {
         ShowData: function (oitem) {
             if (sCurrentTile === undefined) {
