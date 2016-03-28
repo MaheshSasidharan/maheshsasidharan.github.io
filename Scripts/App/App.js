@@ -31,7 +31,16 @@ function LayoutPage($scope, $timeout, $location, $window) { //, CommonFactory, C
             innerContents: [{
                 title: "Experiment",
                 content: "<div>Designed an experiment to investigate differences in <ul><li>Comprehension</li><li>Recall</li></ul><br/>Used 14 embellished charts and created corresponding plane charts with same information (including type of chart, titles, axis labels, axis values)</div>"
-            }]
+            },
+            {
+                title: "Participants",
+                content: "<ui><li>20 participants - 9 males, 11 females</li><li>Age - Between 18 to 40 </li><li>Education - 7 Graduates, 13 Undergraduates</li></ui>"
+            }, {
+                title: "Apparatus",
+                content: "<ui><li>24-inch widescreen monitor</li><li>Tobii eye  tracker to capture eye-gaze data</li></ui>",
+                url: "http://i.imgur.com/mzo75D0.jpg"
+            }
+            ]
         },
         {
             tileCount: 2,
