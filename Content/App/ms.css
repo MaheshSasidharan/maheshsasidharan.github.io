@@ -71,7 +71,7 @@
 /** END **/
 /**BG**/
 .MS_Landing .jumbotron {
-    color: #ffffff;
+    color: #310707;
     background: black; /* For browsers that do not support gradients */
     background: -webkit-linear-gradient(rgba(0, 0, 0, 0),rgba(255, 8, 8, 0.42),rgba(0, 0, 0, 0)); /* For Safari 5.1 to 6.0 */
     background: -o-linear-gradient(rgba(0, 0, 0, 0),rgba(255, 8, 8, 0.42),rgba(0, 0, 0, 0)); /* For Opera 11.1 to 12.0 */
