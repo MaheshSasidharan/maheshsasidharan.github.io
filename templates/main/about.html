@@ -1,0 +1,24 @@
+﻿<div ng-repeat="x in lp.arrIds" id="{{x}}">
+    <div class="jumbotron">
+        <h1>The About Page</h1>
+        <div class="MS_ContentContainer">
+            <p>This page demonstrates <span class="text-danger">multiple</span> and <span class="text-danger">named</span> views.</p>
+        </div>
+    </div>
+
+
+
+    <div class="row NoPadding NoMargin">
+
+        <!-- COLUMN ONE NAMED VIEW -->
+        <div class="col-sm-6">
+            <div ui-view="columnOne"></div>
+        </div>
+
+        <!-- COLUMN TWO NAMED VIEW -->
+        <div class="col-sm-6">
+            <div ui-view="columnTwo"></div>
+        </div>
+
+    </div>
+</div>

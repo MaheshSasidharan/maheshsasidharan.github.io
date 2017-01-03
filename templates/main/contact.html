@@ -1,0 +1,28 @@
+﻿<div class="MS_Contact">
+    <div class="row NoMargin NoPadding">
+        <div class="BottomContainer">
+            <div class="MyCO" ng-repeat="con in co.arrCV"
+                 ng-mouseenter="hoverCV = true"
+                 ng-mouseleave="hoverCV = false">
+                <a class="InnerTile MyC"
+                   ng-class="{'InnerTileAnimationClick': hoverCV}"
+                   ng-href="{{con.Link}}" class="button-link" target="_blank">
+                    <div class="IN_Title">{{con.Type}}</div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="row NoMargin NoPadding">
+        <div class="TopContainer">
+            <div ng-repeat="con in co.arrContacts"
+                 ng-mouseenter="hover = true"
+                 ng-mouseleave="hover = false">
+                <a class="InnerTile"
+                   ng-class="{'InnerTileAnimationClick': hover}"
+                   ng-href="{{con.Link}}" class="button-link" target="_blank">
+                    <div class="IN_Title">{{con.Type}}</div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

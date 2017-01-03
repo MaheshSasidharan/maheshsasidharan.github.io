@@ -1,20 +1,23 @@
-﻿AnnualReview
+﻿MSPortfolio
 
 .factory('Factory_CommonRoutines', [CommonRoutines])
 
 function CommonRoutines() {
-    var $timeout = null;
-    var Constants = null;
-
     var oCommonRoutine = {
         FindItemInArray: function (array, keyName, keyVal, returnType) {
             if (undefined === keyVal || null === keyVal) {
                 return null;
             }
+            var bFound = false;
             for (var i in array) {
                 if (array[i][keyName] === keyVal) {
+                    bFound = true;
                     break;
                 }
+            }
+            if (!bFound) {
+                console.log(keyVal);
+                return null;
             }
             if (returnType === "index") {
                 return i;
@@ -59,38 +62,50 @@ function CommonRoutines() {
                 console.log("%c" + msg, "color:" + color + ";font-weight:bold; background-color: " + bgc + ";");
             }
         },
-        Notification: {
-            sTitle: "",
-            bShow: false,
-            sType: "",
-            ShowNotification: function (bShow, sTitle, sType) {
-                this.HideNotification(); // Clear previous notification and show 
-                var that = this;
-                $timeout(function () {
-                    that.sTitle = sTitle;
-                    that.bShow = bShow;
-                    that.sType = sType;
-                }, 10);
-            },
-            HideNotification: function () {
-                this.sTitle = "";
-                this.bShow = false;
-                this.sType = "";
+        ScrollTo: function(eID) {
+            var startY = currentYPosition();
+            var stopY = elmYPosition(eID);
+            var distance = stopY > startY ? stopY - startY : startY - stopY;
+            if (distance < 50) {
+                scrollTo(0, stopY); return;
             }
-        },
-        Popup: {
-            bShow: false,
-            sType: null,
-            sTitle: null,
-            ShowPopup: function (bShow, sType, sTitle) {
-                this.bShow = bShow;
-                this.sType = sType;
-                this.sTitle = sTitle;
+            var speed = Math.round(distance / 50);
+            if (speed >= 20) speed = 10;
+            var step = Math.round(distance / 12);
+            var leapY = stopY > startY ? startY + step : startY - step;
+            var timer = 0;
+            if (stopY > startY) {
+                for ( var i=startY; i<stopY; i+=step ) {
+                    setTimeout("window.scrollTo(0, "+leapY+")", timer * speed);
+                    leapY += step; if (leapY > stopY) leapY = stopY; timer++;
+                } return;
             }
-        },
-        Init: function (oTimeout, oConstants) {
-            $timeout = oTimeout;
-            Constants = oConstants;
+            for ( var i=startY; i>stopY; i-=step ) {
+                setTimeout("window.scrollTo(0, "+leapY+")", timer * speed);
+                leapY -= step; if (leapY < stopY) leapY = stopY; timer++;
+            }
+        
+            function currentYPosition() {
+                // Firefox, Chrome, Opera, Safari
+                if (self.pageYOffset) return self.pageYOffset;
+                // Internet Explorer 6 - standards mode
+                if (document.documentElement && document.documentElement.scrollTop)
+                    return document.documentElement.scrollTop;
+                // Internet Explorer 6, 7 and 8
+                if (document.body.scrollTop) return document.body.scrollTop;
+                return 0;
+            }
+        
+            function elmYPosition(eID) {
+                var elm = document.getElementById(eID);
+                var y = elm.offsetTop;
+                var node = elm;
+                while (node.offsetParent && node.offsetParent != document.body) {
+                    node = node.offsetParent;
+                    y += node.offsetTop;
+                } return y;
+            }
+
         }
     }
 
