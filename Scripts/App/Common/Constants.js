@@ -12,6 +12,11 @@ function Constants() {
                 Title: "Screener – Department of Psychiatry (Present)",
                 Role: "Student Research Assistant - D​esigner and ​Developer",
                 Technologies: "N​ode.js, AngularJS, MySQL",
+                Link: [{
+                    Type: "github.png",
+                    Title: "Github",
+                    Link: "https://github.com/MaheshSasidharan/ScreenerApp"
+                }],
                 Responsibilities: [
                     "Retrieve response time, accuracy in synchronization of tone and user audio",
                     "Matrix reasoning, Picture Prompt, Speech analysis",
@@ -31,6 +36,57 @@ function Constants() {
                     "Code using MVC .NET 4.5"
                 ]
             }, {
+                Title: "Auto Scheduler – Graduate Project",
+                Role: "Designer and Developer",
+                Technologies: "Swift 3, iOS, N​ode.js, Push notification",
+                Link: [{
+                    Type: "github.png",
+                    Title: "Github - App",
+                    Link: "https://github.com/skalyanmoguloju/auto_scheduler"
+                }, {
+                    Type: "github.png",
+                    Title: "Github - Server",
+                    Link: "https://github.com/MaheshSasidharan/AutoSchedulerServer"
+                }],
+                Responsibilities: [
+                    "Designed meeting views",
+                    "Created Node.js server for communication, calculation and push notification",
+                    "Allow to create meeting, add users, location, time",
+                    "Allow to give meeting preference based on free times, and cancel meeting",
+                    "Add meeting to iCalendar"
+                ]
+            }, {
+                Title: "Kompair – Graduate Project",
+                Role: "Designer and Developer",
+                Technologies: "Ionic, FireBase, AngularJS, HTML5, CSS3, Android, iOS",
+                Link: [{
+                    Type: "github.png",
+                    Title: "Github",
+                    Link: "https://github.com/MaheshSasidharan/Kompair"
+                }],
+                Responsibilities: [
+                    "Designed firebase schemas",
+                    "Authentication using Cordova",
+                    "Create comparisons, add categories of different types",
+                    "Allow to search, allow to like, dislike, favorite"
+                ]
+            }, {
+                Title: "Wiki-College – Graduate Project",
+                Role: "Designer and Developer",
+                Technologies: "Ruby on Rails, MySQL, AngularJS, HTML5, CSS3",
+                Link: [{
+                    Type: "github.png",
+                    Title: "Github",
+                    Link: "https://github.com/MaheshSasidharan/WikiCollege"
+                }],
+                Responsibilities: [
+                    "Designed relational schemas",
+                    "Created website with authentication with session",
+                    "Develop ability to form groups and interact with other users of website",
+                    "Created test cases using RSpec"
+                ]
+            },
+            {
                 Title: "Expense Management",
                 Role: "​Designer and ​Developer",
                 Technologies: ".N​et 4.5 Web API, AngularJS, Entity Framework, SQL",
@@ -83,6 +139,39 @@ function Constants() {
                 "Designed and developed tool for Site Management",
                 "Setup TFS and dev. environment, sprint management",
                 "Conducted code reviews, and project review"
+                ]
+            },
+            {
+                Title: "Sonar Battles – Android Game",
+                Role: "Designer and Developer",
+                Technologies: "Java, Eclipse, SQLite",
+                Link: [{
+                    Type: "googleplay.jpg",
+                    Title: "Google Play",
+                    Link: "https://play.google.com/store/apps/details?id=iffi.mah.preetha&amp;hl=en"
+                }],
+                Responsibilities: [
+                "Created 2-D game Sonar-Battles for Android 2.3.3 and above, using Android Framework involving Java and SQLite"
+                ]
+            }, {
+                Title: "Saturn: 3D",
+                Role: "Developer",
+                Technologies: "C++, OpenGL",
+                Responsibilities: [
+                    "Developed 3D simulation of Saturn’s orbit around the Sun using OpenGL"
+                ]
+            }, {
+                Title: "Note Maker",
+                Role: "Designer and Developer",
+                Technologies: "JavaScript, HTML5, CSS3",
+                Link: [{
+                    Type: "github.png",
+                    Title: "Github",
+                    Link: "https://github.com/MaheshSasidharan/NoteMaker"
+                }],
+                Responsibilities: [
+                    "Pure Javascript based Note Maker app",
+                    "Create, add and edit notes and save using Session"
                 ]
             }],
             Positions: [{
@@ -220,6 +309,58 @@ function Constants() {
             {
                 Title: "SSMS",
                 ImgName: "sql.jpeg"
+            },
+            {
+                Title: "Swift 3",
+                ImgName: "swift.jpeg"
+            },
+            {
+                Title: "iOS",
+                ImgName: "ios.jpg"
+            },
+            {
+                Title: "Push notification",
+                ImgName: "apn.png"
+            },
+            {
+                Title: "Ionic",
+                ImgName: "ionic.png"
+            },
+            {
+                Title: "FireBase",
+                ImgName: "firebase.png"
+            },
+            {
+                Title: "Android",
+                ImgName: "android.png"
+            },
+            {
+                Title: "Ruby on Rails",
+                ImgName: "ruby.jpeg"
+            },
+            {
+                Title: "Java",
+                ImgName: "java.png"
+            },
+            {
+                Title: "Eclipse",
+                ImgName: "eclipse.jpg"
+            },
+            {
+                Title: "SQLite",
+                ImgName: "sqlite.jpeg"
+            },
+            {
+                Title: "Eclipse",
+                ImgName: "eclipse.jpg"
+            },
+            {
+                Title: "C++",
+                ImgName: "cpp.png"
+            },
+            {
+                Title: "OpenGL",
+                ImgName: "opengl.jpg"
             }],
             Education: [{
                 Degree: "Master Information Science",
@@ -279,11 +420,11 @@ function Constants() {
                 CV: [
                     {
                         Type: "CV",
-                        Link: "https://drive.google.com/open?id=0By_3UoPyNHEFMTFseVZkWGtrVEk"
+                        Link: "https://drive.google.com/open?id=0By_3UoPyNHEFYWRzYTM2TG56dmM"
                     },
                     {
                         Type: "Resume",
-                        Link: "https://drive.google.com/open?id=0By_3UoPyNHEFMVBRNFRENkJRMFk"
+                        Link: "https://drive.google.com/open?id=0By_3UoPyNHEFVkpZRlYzQUJ6YjA"
                     }
                 ]
             }

@@ -29,6 +29,22 @@
                         </div>
                     </div>
                 </div>
+                <div class="row NoPadding NoMargin" ng-if="proj.Link">
+                    <h3>
+                        <span class="glyphicon glyphicon-qrcode"></span>
+                        <textContent>Links</textContent>
+                    </h3>
+                    <div class="MS_InnerContentContainer2">
+                        <div class="InlineBlock MS_Technology" ng-repeat="oLink in proj.Link track by $index">
+                            <div class="techBG_Container">
+                                <a class="" ng-href="{{oLink.Link}}" class="button-link" target="_blank">
+                                    <img ng-src="Content/Images/technologies/{{oLink.Type}}" />
+                                </a>
+                            </div>
+                            <div class="techBG_Title" title="{{tech.Title}}">{{oLink.Title}}</div>
+                        </div>
+                    </div>
+                </div>
                 <div class="row NoPadding NoMargin">
                     <h3>
                         <span ng-show="bShow" class="glyphicon glyphicon-star"></span>
