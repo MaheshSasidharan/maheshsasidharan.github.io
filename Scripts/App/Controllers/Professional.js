@@ -9,10 +9,12 @@ function ProfessionalCtrl(SP) {
 
     pr.arrPositions.forEach(function (oItem) {
         oItem.arrTechnology = [];
-        var arrTechnologies = oItem.Technologies.split(",");
-        arrTechnologies.forEach(function (sTechnology) {
-            sTechnology = sTechnology.trim();
-            oItem.arrTechnology.push(SP.CR.FindItemInArray(SP.Con.MSPortfolio.Technologies, "Title", sTechnology, "item"));
-        });
+        if (oItem.Technologies) {
+            var arrTechnologies = oItem.Technologies.split(",");
+            arrTechnologies.forEach(function (sTechnology) {
+                sTechnology = sTechnology.trim();
+                oItem.arrTechnology.push(SP.CR.FindItemInArray(SP.Con.MSPortfolio.Technologies, "Title", sTechnology, "item"));
+            });
+        }
     });
 }

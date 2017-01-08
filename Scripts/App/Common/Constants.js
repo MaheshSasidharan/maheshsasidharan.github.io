@@ -149,6 +149,10 @@ function Constants() {
                     Type: "googleplay.jpg",
                     Title: "Google Play",
                     Link: "https://play.google.com/store/apps/details?id=iffi.mah.preetha&amp;hl=en"
+                }, {
+                    Type: "github.png",
+                    Title: "Github",
+                    Link: "https://github.com/MaheshSasidharan/SonarBattles"
                 }],
                 Responsibilities: [
                 "Created 2-D game Sonar-Battles for Android 2.3.3 and above, using Android Framework involving Java and SQLite"
@@ -157,6 +161,11 @@ function Constants() {
                 Title: "Saturn: 3D",
                 Role: "Developer",
                 Technologies: "C++, OpenGL",
+                Link: [{
+                    Type: "github.png",
+                    Title: "Github",
+                    Link: "https://github.com/MaheshSasidharan/Saturn3D"
+                }],
                 Responsibilities: [
                     "Developed 3D simulation of Saturn’s orbit around the Sun using OpenGL"
                 ]
@@ -177,7 +186,7 @@ function Constants() {
             Positions: [{
                 Position: "Research Assistant",
                 When: "2016-Present",
-                Where: "Department of Psychiatry",
+                Where: "Department of Psychiatry, University of Iowa",
                 Role: "Mobile and web apps designer and developer",
                 Responsibility: "Design and develop light and modular solution for patient screening",
                 Technologies: "N​ode.js, AngularJS, MySQL"
@@ -205,6 +214,20 @@ function Constants() {
                 Role: "Business Application Developer",
                 Responsibility: "Lead a team of 5, provided POCs, designed and developed applications",
                 Technologies: ".Net, HTML, SQL, SSIS, JavaScript, jQuery, CSS3, SharePoint 2013"
+            },
+            {
+                Position: "Graduate Student Senate",
+                When: "2015-Present",
+                Where: "University of Iowa",
+                Role: "Informatics department representative",
+                Responsibility: "Discuss issues related to graduate and PhD students and help improve facilities for faculty and staff."
+            },
+            {
+                Position: "International Student Committee",
+                When: "2016-Present",
+                Where: "University of Iowa",
+                Role: "Chair",
+                Responsibility: "Help connect domestic and international students. Resolve any issues faced by international students. Negotiate with university to improve student life. And organize social hours for fun."
             }],
             Technologies: [{
                 Title: ".Net Entity Framework",
