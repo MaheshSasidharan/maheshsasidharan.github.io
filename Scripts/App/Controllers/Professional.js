@@ -8,8 +8,8 @@ function ProfessionalCtrl(SP) {
     pr.arrPositions = SP.Con.MSPortfolio.Positions;
 
     pr.arrPositions.forEach(function (oItem) {
-        oItem.arrTechnology = [];
         if (oItem.Technologies) {
+            oItem.arrTechnology = [];
             var arrTechnologies = oItem.Technologies.split(",");
             arrTechnologies.forEach(function (sTechnology) {
                 sTechnology = sTechnology.trim();
