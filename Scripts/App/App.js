@@ -26,7 +26,7 @@ function LayoutPage(SP, $scope) {
                     function(position) {
                         $scope.$apply(
                             function() {
-                                lp.position = JSON.stringify({lat: lp.position.coords.latitude, lon: lp.position.coords.longitude});
+                                lp.position = JSON.stringify({lat: position.coords.latitude, lon: position.coords.longitude});
                                 lp.Helper.UA();
                             }
                         );
