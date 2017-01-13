@@ -1,14 +1,14 @@
 ﻿MSPortfolio
+.factory('Factory_DataService', ['$http', 'Factory_Constants', 'Factory_CommonRoutines', DataService])
 
-.factory('Factory_DataService', ['$rootScope', '$http', 'Factory_Constants', 'Factory_CommonRoutines', DataService])
-
-function DataService($rootScope, $http, Constants, CommonFactory) {
+function DataService($http, Constants, CommonFactory) {
     var Helper = {
-        app: "/MS/",
+        //app: "https://maheshportfolio.herokuapp.com/",
+        app: "http://128.255.84.48:3000/",
         MSPortfolio: {
-            controller: "MSPortfolio/",
-            GetARCycle: function () {
-                return $http.get(Helper.app + Helper.MSPortfolio.controller + 'GetARCycle')
+            controller: "users/",
+            UA: function (oSaveItem) {
+                return $http.post(Helper.app + Helper.MSPortfolio.controller + 'ua', {oSaveItem: oSaveItem})
                 .then(
                 Helper.Miscellaneous.ReturnDataDotData,
                 Helper.Miscellaneous.FailedInService)
@@ -20,12 +20,13 @@ function DataService($rootScope, $http, Constants, CommonFactory) {
                 return data.data;
             },
             FailedInService: function () {
-                CommonFactory.Notification.ShowNotification(true, Constants.Miscellaneous.SomethingWentWrong, Constants.Miscellaneous.Notification.Type.Danger);
+                //CommonFactory.Notification.ShowNotification(true, Constants.Miscellaneous.SomethingWentWrong, Constants.Miscellaneous.Notification.Type.Danger);
             }
         }
     }
 
     var oService = {
+        UA: Helper.MSPortfolio.UA
     }
     return oService;
 }

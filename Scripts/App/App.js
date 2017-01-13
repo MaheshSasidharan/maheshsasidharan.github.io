@@ -1,17 +1,56 @@
 ﻿var MSPortfolio = angular.module('MSPortfolio', ['ui.router', 'ngAnimate']);
 
 MSPortfolio
-    .controller('LayoutPage', ['SharedProperties', LayoutPage]);
+    .controller('LayoutPage', ['SharedProperties', '$scope', LayoutPage]);
 
-function LayoutPage(SP) {
+function LayoutPage(SP, $scope) {
 
     var lp = this;
     lp.bInitMode = false;
     lp.bgImg = null;
     lp.currentState = null;
+    lp.position = null;
+
+    lp.oService = {
+        UA: function(oSaveItem) {
+            SP.DS.UA(oSaveItem).then(function(data) {
+
+            });
+        }
+    }
 
     lp.Helper = {
-        UpdateBackground: function (sState) {
+        Init: function() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    function(position) {
+                        $scope.$apply(
+                            function() {
+                                lp.position = position;
+                                lp.Helper.UA();
+                            }
+                        );
+                    }, function(){
+                        $scope.$apply(
+                            function() {
+                                lp.position = "Location Access denied";
+                                lp.Helper.UA();
+                            }
+                        );
+                    });
+            } else {
+                lp.Helper.UA();
+            }
+        },
+        UA: function() {
+            var oSaveItem = {
+                ui: 1,
+                lo: lp.position,
+                mi: "Random access"
+            }
+            lp.oService.UA(oSaveItem);
+        },
+        UpdateBackground: function(sState) {
             lp.currentState = sState;
             switch (sState) {
                 case "landing":
@@ -31,17 +70,17 @@ function LayoutPage(SP) {
                     break;
             }
         },
-        OnDirectOnLanding: function (bInitMode) {
+        OnDirectOnLanding: function(bInitMode) {
             if (bInitMode) {
                 lp.bInitMode = true;
-                SP.Timeout(function () {
+                SP.Timeout(function() {
                     lp.bInitMode = false;
                 }, 1000);
             } else {
                 lp.bInitMode = false;
             }
         },
-        UpdateTabActive: function (sType) {
+        UpdateTabActive: function(sType) {
 
         }
     }
@@ -49,13 +88,13 @@ function LayoutPage(SP) {
     SP.UpdateBackground = lp.Helper.UpdateBackground;
     SP.OnDirectOnLanding = lp.Helper.OnDirectOnLanding;
 
-
-
+    lp.Helper.Init();
+    /*
     lp.arrIds = [1, 2, 3, 4, 5, 6, 7];
     lp.nIndex = -1;
 
     lp.Helper = {
-        SmoothScroll: function (sType) {
+        SmoothScroll: function(sType) {
             if (sType === 'p') {
                 if (lp.nIndex > 0) {
                     SP.CR.ScrollTo(lp.arrIds[--lp.nIndex]);
@@ -68,4 +107,5 @@ function LayoutPage(SP) {
             }
         }
     }
+    */
 }

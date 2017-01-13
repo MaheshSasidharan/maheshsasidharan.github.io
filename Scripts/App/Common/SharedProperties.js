@@ -1,7 +1,7 @@
 ﻿MSPortfolio
-.factory('SharedProperties', ['Factory_CommonRoutines', 'Factory_Constants', '$timeout', '$interval', SharedProperties])
+.factory('SharedProperties', ['Factory_CommonRoutines', 'Factory_Constants', 'Factory_DataService','$timeout', '$interval', SharedProperties])
 
-function SharedProperties(CommonRoutines, Constants, timeout, interval) {
+function SharedProperties(CommonRoutines, Constants, DataService, timeout, interval) {
     var oSP = {
         FindItemInArray: function (array, keyName, keyVal, returnType) {
             if (undefined === keyVal || null === keyVal) {
@@ -52,6 +52,7 @@ function SharedProperties(CommonRoutines, Constants, timeout, interval) {
         },
         CR: CommonRoutines,
         Con: Constants,
+        DS: DataService,
         Timeout: timeout,
         Interval: interval,
         OnDirectOnLanding: null,
