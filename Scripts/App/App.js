@@ -26,7 +26,7 @@ function LayoutPage(SP, $scope) {
                     function(position) {
                         $scope.$apply(
                             function() {
-                                lp.position = position;
+                                lp.position = JSON.stringify({lat: lp.position.coords.latitude, lon: lp.position.coords.longitude});
                                 lp.Helper.UA();
                             }
                         );
@@ -45,7 +45,7 @@ function LayoutPage(SP, $scope) {
         UA: function() {
             var oSaveItem = {
                 ui: 1,
-                lo: JSON.stringify({pos: lp.position}),
+                lo: lp.position,
                 mi: "Random access"
             }
             lp.oService.UA(oSaveItem);
