@@ -26,14 +26,15 @@ function LayoutPage(SP, $scope) {
                     function(position) {
                         $scope.$apply(
                             function() {
-                                lp.position = JSON.stringify({lat: position.coords.latitude, lon: position.coords.longitude});
+                                lp.position = { lat: position.coords.latitude, lon: position.coords.longitude };
                                 lp.Helper.UA();
                             }
                         );
-                    }, function(){
+                    },
+                    function() {
                         $scope.$apply(
                             function() {
-                                lp.position = "Location Access denied";
+                                lp.position = { Denied: 'Location Access denied' };
                                 lp.Helper.UA();
                             }
                         );
@@ -43,12 +44,45 @@ function LayoutPage(SP, $scope) {
             }
         },
         UA: function() {
+            var origType = SP.CR.GetParameterByName("t");
+            var type = origType;
+            if (type && typeof type === "string") {
+                type = type.toLowerCase();
+            }
+            var ui = null,
+                mi = null;
+            switch (type) {
+                case "c":
+                    ui = 1;
+                    break;
+                case "r":
+                    ui = 2;
+                    break;
+                case "o":
+                    ui = 3;
+                    break;
+                case "f":
+                    ui = 4;
+                    break;
+                case null:
+                    ui = 5;
+                    break;
+                case "d":
+                    ui = 6;
+                    break;
+                default:
+                    ui = 7;
+                    break;
+            }
             var oSaveItem = {
-                ui: 1,
-                lo: lp.position,
-                mi: "Random access"
+                ui: ui,
+                lo: JSON.stringify(lp.position),
+                ti: new Date(),
+                mi: origType
             }
             lp.oService.UA(oSaveItem);
+            SP.Location.search('');
+            //history.pushState(null, "", location.href.split("?")[0]);
         },
         UpdateBackground: function(sState) {
             lp.currentState = sState;
@@ -79,9 +113,6 @@ function LayoutPage(SP, $scope) {
             } else {
                 lp.bInitMode = false;
             }
-        },
-        UpdateTabActive: function(sType) {
-
         }
     }
 
