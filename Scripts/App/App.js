@@ -45,7 +45,7 @@ function LayoutPage(SP, $scope) {
         UA: function() {
             var oSaveItem = {
                 ui: 1,
-                lo: JSON.stringify(lp.position),
+                lo: JSON.stringify({pos: lp.position}),
                 mi: "Random access"
             }
             lp.oService.UA(oSaveItem);
