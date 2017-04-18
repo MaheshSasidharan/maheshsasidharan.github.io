@@ -16,17 +16,17 @@
     opacity: 0.93;
 }
 
-    .glass:after {
-        content: "";
-        background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.2));
-        position: absolute;
-        top: 1px;
-        left: 1px;
-        width: calc(100% - 0px);
-        height: 50%;
-        border-radius: 2px 2px 0px 0px;
-        background: rgba(128, 0, 0, 0.3);
-    }
+.glass:after {
+    content: "";
+    background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.2));
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    width: calc(100% - 0px);
+    height: 50%;
+    border-radius: 2px 2px 0px 0px;
+    background: rgba(128, 0, 0, 0.3);
+}
 
 
 /*End of glass*/
@@ -44,42 +44,52 @@
     position: absolute;
 }
 
-    .MS_ButtonPress.buttonPressed {
-        background: linear-gradient(red, red);
-    }
+.MS_ButtonPress.buttonPressed {
+    background: linear-gradient(red, red);
+}
 
-    .MS_ButtonPress.buttonPressed {
-        height: 195px;
-        width: 195px;
-        margin-top: 5px;
-    }
+.MS_ButtonPress.buttonPressed {
+    height: 195px;
+    width: 195px;
+    margin-top: 5px;
+}
 
-    .MS_ButtonPress.glass:after {
-        height: 100%;
-        box-shadow: inset -20px -20px 96px rgba(128, 0, 0, 1);
-        top: 0;
-        left: 0;
-        border-radius: 50%;
-        transition: all linear 100ms;
-    }
+.MS_ButtonPress.glass:after {
+    height: 100%;
+    box-shadow: inset -20px -20px 96px rgba(128, 0, 0, 1);
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    transition: all linear 100ms;
+}
 
-    .MS_ButtonPress.glass.buttonPressed:after {
-        box-shadow: inset -15px -5px 96px rgba(128, 0, 0, 1);
-    }
+.MS_ButtonPress.glass.buttonPressed:after {
+    box-shadow: inset -15px -5px 96px rgba(128, 0, 0, 1);
+}
 
 /** END **/
 /**BG**/
+
+.MS_Landing {
+    bottom: 0px;
+    position: absolute;
+}
+
 .MS_Landing .jumbotron {
     color: #310707;
-    background: black; /* For browsers that do not support gradients */
-    background: -webkit-linear-gradient(rgba(0, 0, 0, 0),rgba(255, 8, 8, 0.42),rgba(0, 0, 0, 0)); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(rgba(0, 0, 0, 0),rgba(255, 8, 8, 0.42),rgba(0, 0, 0, 0)); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(rgba(0, 0, 0, 0),rgba(255, 8, 8, 0.42),rgba(0, 0, 0, 0)); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(rgba(0, 0, 0, 0),rgba(255, 8, 8, 0.42),rgba(0, 0, 0, 0)); /* Standard syntax */
+    padding: 0 20px;
+    background: transparent;
+/*    background: -webkit-linear-gradient(rgba(0, 0, 0, 0),rgba(255, 8, 8, 0.42),rgba(0, 0, 0, 0));
+    background: -o-linear-gradient(rgba(0, 0, 0, 0),rgba(255, 8, 8, 0.42),rgba(0, 0, 0, 0));
+    background: -moz-linear-gradient(rgba(0, 0, 0, 0),rgba(255, 8, 8, 0.42),rgba(0, 0, 0, 0));*/
+}
+
+.MS_Landing .jumbotron h1 {
+    font-size: 25px;
 }
 
 .MS_Landing .jumbotron .MS_ContentContainer p {
-    font-size: 33px;
+    font-size: 20px;
 }
 
 .MS_PageHeader {
@@ -97,42 +107,42 @@
     padding-right: 20px;
 }
 
-    .MS_ContentContainer h2 {
-        margin-top: 10px;
-        font-weight: bold;
-        font-size: 35px;
-    }
+.MS_ContentContainer h2 {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 35px;
+}
 
-        .MS_ContentContainer h2 textContent {
-            font-size: 50px;
-        }
+.MS_ContentContainer h2 textContent {
+    font-size: 50px;
+}
 
-            .MS_ContentContainer h2 textContent::before {
-                content: "";
-                background: #4f86af;
-                margin: 0px 10px 0 5px;
-                display: inline-block;
-                width: 5px;
-                height: 38px;
-            }
+.MS_ContentContainer h2 textContent::before {
+    content: "";
+    background: #4f86af;
+    margin: 0px 10px 0 5px;
+    display: inline-block;
+    width: 5px;
+    height: 38px;
+}
 
-    .MS_ContentContainer h3 {
-        margin-top: 5px;
-        font-size: 20px;
-    }
+.MS_ContentContainer h3 {
+    margin-top: 5px;
+    font-size: 20px;
+}
 
-        .MS_ContentContainer h3 textContent {
-            font-size: 25px;
-        }
+.MS_ContentContainer h3 textContent {
+    font-size: 25px;
+}
 
-            .MS_ContentContainer h3 textContent::before {
-                content: "";
-                background: #95b2c7;
-                margin: 0px 10px 0 5px;
-                display: inline-block;
-                width: 5px;
-                height: 25px;
-            }
+.MS_ContentContainer h3 textContent::before {
+    content: "";
+    background: #95b2c7;
+    margin: 0px 10px 0 5px;
+    display: inline-block;
+    width: 5px;
+    height: 25px;
+}
 
 .MS_InnerContentContainer {
     padding-left: 18px;
@@ -147,6 +157,12 @@
 }
 
 /*End Landing*/
+
+/**Professional**/
+.MS_Professional, .MS_Project, .MS_Education{
+    padding: 0 10px;
+}
+/*End Professional*/
 
 /**Personal**/
 .MS_Personal .jumbotron {
@@ -170,38 +186,38 @@
     cursor: pointer;
 }
 
-    .MS_ShowHideHighlight:hover {
-        color: brown;
-    }
+.MS_ShowHideHighlight:hover {
+    color: brown;
+}
 /**End* Personal*/
 
 .MS_Technology {
     width: 60px;
-    height: 97px;
+    /*height: 97px;*/
     overflow: hidden;
     text-align: center;
 }
 
-    .MS_Technology .techBG_Title {
-        text-overflow: ellipsis;
-        overflow: hidden;
-        font-size: 12px;
-    }
+.MS_Technology .techBG_Title {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: 12px;
+}
 
-    .MS_Technology:not(:last-child) {
-        margin-right: 5px;
-    }
+.MS_Technology:not(:last-child) {
+    margin-right: 5px;
+}
 
 .techBG_Container {
     width: 60px;
     height: 60px;
 }
 
-    .techBG_Container img {
-        max-width: 100%;
-        max-height: 100%;
-        border-radius: 3px;
-    }
+.techBG_Container img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 3px;
+}
 
 /*Education*/
 .MS_Education .jumbotron {
@@ -284,9 +300,9 @@
     float: right;
 }
 
-    .MS_Contact .TopContainer > div {
-        display: inline;
-    }
+.MS_Contact .TopContainer > div {
+    display: inline;
+}
 
 .MyCO {
     width: 250px;
@@ -294,17 +310,17 @@
     display: inline-block;
 }
 
-    .MyCO .InnerTile {
-        border-color: white;
-        color: indianred;
-        width: 250px;
-        height: 250px;
-        border-radius: 50%;
-    }
+.MyCO .InnerTile {
+    border-color: white;
+    color: indianred;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+}
 
-        .MyCO .InnerTile .IN_Title {
-            font-size: 20px;
-        }
+.MyCO .InnerTile .IN_Title {
+    font-size: 20px;
+}
 
 .MyC {
     background: rgba(255,255,255, 0);
@@ -321,15 +337,33 @@
 /*.MyCO::after {
     background: rgba(255, 0, 0, 0.2);
     animation: pulsateL 2s infinite ease-in;
-}*/
+    }*/
 
-.MyCO::before {
-    content: "";
-    position: absolute;
-    border-radius: 50%;
-    width: inherit;
-    height: inherit;
-}
+    .MyCO::before {
+        content: "";
+        position: absolute;
+        border-radius: 50%;
+        width: inherit;
+        height: inherit;
+    }
 
-/*End*/
+    .MS_blurBG{
+        filter: blur(13px);
+    }
 
+    /*End*/
+
+    .timeline .time {
+        font-size: 18px !important;
+    }
+    .timeline .time i {
+        margin-right: 5px;
+    }
+
+    .timeline .time-label {
+        font-size: 20px;
+    }
+
+    .timeline .timeline-header:not(.skipClass) {
+        background: #e0e0e0 !important;
+    }

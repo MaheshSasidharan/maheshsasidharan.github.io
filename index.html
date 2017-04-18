@@ -4,17 +4,26 @@
     <meta charset="UTF-8">
     <title>Mahesh Sasidharan !!</title>
     <link rel="icon" href="Content/Images/favicon.ico" type="image/x-icon">
+
+    <!-- Library CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
     <link rel="stylesheet" href="Content/Library/bootstrap.min.css">
+    <link rel="stylesheet" href="Content/Library/awesomeright.min.css">
+
+    <!-- MS App CSS -->
     <link rel="stylesheet" href="Content/App/App.css" />
     <link rel="stylesheet" href="Content/App/ms.css" />
     <link rel="stylesheet" href="Content/App/animation.css" />
 
-
+    <!-- Library JS -->
     <script src="Scripts/Library/angular.min.js"></script>
     <script src="Scripts/Library/jquery.min.js"></script>
     <script src="Scripts/Library/bootstrap.min.js"></script>
     <script src="Scripts/Library/angular-route.min.js"></script>
     <script src="Scripts/Library/angular-animate.min.js"></script>
+
+    <!-- MS App JS-->
     <script src="Scripts/App/App.js"></script>
     <script src="Scripts/App/state.js"></script>
     <script src="Scripts/App/Controllers/Professional.js"></script>
@@ -29,7 +38,7 @@
 </head>
 
 <body ng-controller="LayoutPage as lp" ng-class="{'MS_Init_Nav': lp.bInitMode}" >
-    <bg ng-style="{'background-image':  'url(Content/Images/app/' + lp.bgImg +')'}"></bg>
+<bg ng-style="{'background-image':  'url(Content/Images/app/' + lp.bgImg +')'}" ng-class="{'MS_blurBG': lp.bgImg === 'contact.jpg'}"></bg>
     <div ng-include="'templates/main/topNav.html'"></div>
     <div class="main" ui-view></div>
 </body>

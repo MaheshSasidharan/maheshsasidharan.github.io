@@ -9,7 +9,7 @@ function Constants() {
         },
         MSPortfolio: {
             Projects: [{
-                Title: "Screener – Department of Psychiatry (Present)",
+                Title: "Screener – Department of Psychiatry",
                 Role: "Student Research Assistant - D​esigner and ​Developer",
                 Technologies: "N​ode.js, AngularJS, MySQL",
                 Link: [{
@@ -18,27 +18,62 @@ function Constants() {
                     Link: "https://github.com/MaheshSasidharan/ScreenerApp"
                 }],
                 Responsibilities: [
-                    "Retrieve response time, accuracy in synchronization of tone and user audio",
-                    "Matrix reasoning, Picture Prompt, Speech analysis",
-                    "Create sessions for user authentication",
-                    "Obtain video, audio, image from user based on required assessments"
+                "Retrieve response time, accuracy in synchronization of tone and user audio",
+                "Matrix reasoning, Picture Prompt, Speech analysis",
+                "Create sessions for user authentication",
+                "Obtain video, audio, image from user based on required assessments"
                 ]
             },
             {
-                Title: "Hospital department applications (Present)",
+                Title: "Labalytics",
+                Role: "Full stack Developer",
+                Technologies: "Angular2, Java, MySQL",
+                Link: [{
+                    Type: "github.png",
+                    Title: "Github",
+                    Link: "https://github.com/labalytics/groundzero"
+                }],
+                Responsibilities: [
+                "Requirement analysis",
+                "Database design",
+                "Scrum master",
+                "UI-UX developer"
+                ]
+            },
+            {
+                Title: "Readit",
+                Role: "Designer and Developer",
+                Technologies: "React.js, FireBase, N​ode.js, Heroku",
+                Link: [{
+                    Type: "heroku.png",
+                    Title: "Live App",
+                    Link: "https://readitnotreddit.herokuapp.com"
+                }, {
+                    Type: "github.png",
+                    Title: "Github",
+                    Link: "https://github.com/MaheshSasidharan/readit"
+                }],
+                Responsibilities: [
+                "Designed and Developed React.js and Firebase app",
+                "Real time state updates and oauth authentication.",
+                "Allows user to comment and like/dislike a post based"
+                ]
+            },
+            {
+                Title: "Human Resource Department applications",
                 Role: "Graduate Research Assistant - D​esigner and ​Developer",
                 Technologies: ".N​et 4.5 MVC, AngularJS, Entity Framework, SQL",
                 Responsibilities: [
-                    "Created employee and resource management applications",
-                    "Migrated oracle forms to HTML5 applications",
-                    "Created dynamic forms using AngularJS",
-                    "Created complex SQL objects",
-                    "Code using MVC .NET 4.5"
+                "Created employee and resource management applications",
+                "Migrated oracle forms to HTML5 applications",
+                "Created dynamic forms using AngularJS",
+                "Created complex SQL objects",
+                "Code using MVC .NET 4.5"
                 ]
             }, {
                 Title: "Auto Scheduler – Graduate Project",
                 Role: "Designer and Developer",
-                Technologies: "Swift 3, iOS, N​ode.js, Push notification",
+                Technologies: "Swift 3, iOS, N​ode.js, Push notification, Heroku",
                 Link: [{
                     Type: "github.png",
                     Title: "Github - App",
@@ -49,13 +84,29 @@ function Constants() {
                     Link: "https://github.com/MaheshSasidharan/AutoSchedulerServer"
                 }],
                 Responsibilities: [
-                    "Designed meeting views",
-                    "Created Node.js server for communication, calculation and push notification",
-                    "Allow to create meeting, add users, location, time",
-                    "Allow to give meeting preference based on free times, and cancel meeting",
-                    "Add meeting to iCalendar"
+                "Designed meeting views",
+                "Created Node.js server for communication, calculation and push notification",
+                "Allow to create meeting, add users, location, time",
+                "Allow to give meeting preference based on free times, and cancel meeting",
+                "Add meeting to iCalendar"
                 ]
-            }, {
+            },
+            {
+                Title: "HoloTouch",
+                Role: "Creative designer and developer",
+                Technologies: "Microsoft Hololens, Unity",
+                Link: [ {
+                    Type: "github.png",
+                    Title: "Github",
+                    Link: "https://github.com/MaheshSasidharan/holotouch"
+                }],
+                Responsibilities: [
+                "Created mixed reality Hololens app using Microsoft Hololens and Unity.",
+                "Has voice command, gesture recognition, gaze recognition, spatial sound and spatial mapping.",
+                "Created 3D objects using Unity 5"
+                ]
+            },
+            {
                 Title: "Kompair – Graduate Project",
                 Role: "Designer and Developer",
                 Technologies: "Ionic, FireBase, AngularJS, HTML5, CSS3, Android, iOS",
@@ -65,10 +116,10 @@ function Constants() {
                     Link: "https://github.com/MaheshSasidharan/Kompair"
                 }],
                 Responsibilities: [
-                    "Designed firebase schemas",
-                    "Authentication using Cordova",
-                    "Create comparisons, add categories of different types",
-                    "Allow to search, allow to like, dislike, favorite"
+                "Designed firebase schemas",
+                "Authentication using Cordova",
+                "Create comparisons, add categories of different types",
+                "Allow to search, allow to like, dislike, favorite"
                 ]
             }, {
                 Title: "Wiki-College – Graduate Project",
@@ -80,10 +131,10 @@ function Constants() {
                     Link: "https://github.com/MaheshSasidharan/WikiCollege"
                 }],
                 Responsibilities: [
-                    "Designed relational schemas",
-                    "Created website with authentication with session",
-                    "Develop ability to form groups and interact with other users of website",
-                    "Created test cases using RSpec"
+                "Designed relational schemas",
+                "Created website with authentication with session",
+                "Develop ability to form groups and interact with other users of website",
+                "Created test cases using RSpec"
                 ]
             },
             {
@@ -155,7 +206,9 @@ function Constants() {
                     Link: "https://github.com/MaheshSasidharan/SonarBattles"
                 }],
                 Responsibilities: [
-                "Created 2-D game Sonar-Battles for Android 2.3.3 and above, using Android Framework involving Java and SQLite"
+                "Created 2-D game Sonar-Battles for Android 2.3.3",
+                "Created music, sprite images and background image assets",
+                "Used Android Framework involving Java and SQLite"
                 ]
             }, {
                 Title: "Saturn: 3D",
@@ -167,7 +220,7 @@ function Constants() {
                     Link: "https://github.com/MaheshSasidharan/Saturn3D"
                 }],
                 Responsibilities: [
-                    "Developed 3D simulation of Saturn’s orbit around the Sun using OpenGL"
+                "Developed 3D simulation of Saturn’s orbit around the Sun using OpenGL"
                 ]
             }, {
                 Title: "Note Maker",
@@ -179,55 +232,77 @@ function Constants() {
                     Link: "https://github.com/MaheshSasidharan/NoteMaker"
                 }],
                 Responsibilities: [
-                    "Pure Javascript based Note Maker app",
-                    "Create, add and edit notes and save using Session"
+                "Pure Javascript based Note Maker app",
+                "Create, add and edit notes and save using Session"
                 ]
             }],
-            Positions: [{
-                Position: "Research Assistant",
-                When: "2016-Present",
-                Where: "Department of Psychiatry, University of Iowa",
-                Role: "Mobile and web apps designer and developer",
-                Responsibility: "Design and develop light and modular solution for patient screening",
-                Technologies: "N​ode.js, AngularJS, MySQL"
-            },
+            Positions: [
             {
-                Position: "Graduate Assistant",
-                When: "2015-Present",
-                Where: "Internal Medicines Department, University of Iowa",
-                Role: "Custom Solutions Developer",
-                Responsibility: "End to End development of Employee Management Systems",
-                Technologies: "ASP.Net MVC, Web API, HTML, AngularJS, SSMS"
+                Position: "Software Engineer 2",
+                When: "2012-2014",
+                Where: "MAQ Software, Hyderabad",
+                Role: "Business Application Developer",
+                Responsibilities: [
+                "Lead 2 projects as a team lead", 
+                "Data analysis, designing, testing, code review, deployment, documentation",
+                "Provided POCs"
+                ],
+                Technologies: ".Net, HTML, SQL, SSIS, JavaScript, jQuery, CSS3, SharePoint 2013"
             },
             {
                 Position: "Consultant 2",
                 When: "2014-2015",
                 Where: "Neudesic, Hyderabad",
                 Role: "Custom Application Developer",
-                Responsibility: "Mainly Client side application development",
+                Responsibilities: [
+                "Requirement analysis",
+                "Design and develop applications"
+                ],
                 Technologies: ".Net Entity Framework, SQL, HTML, AngularJS"
             },
             {
-                Position: "Software Engineer 2",
-                When: "2012-2014",
-                Where: "MAQ Software, Hyderabad",
-                Role: "Business Application Developer",
-                Responsibility: "Lead a team of 5, provided POCs, designed and developed applications",
-                Technologies: ".Net, HTML, SQL, SSIS, JavaScript, jQuery, CSS3, SharePoint 2013"
+                Position: "Graduate Assistant",
+                When: "2015-Present",
+                Where: "Internal Medicines Department, University of Iowa",
+                Role: "Custom Solutions Developer",
+                Responsibilities: [
+                "Create End to End development of Employee Management Systems",
+                "Migrated applications from Java to .Net"
+                ],
+                Technologies: "ASP.Net MVC, Web API, HTML, AngularJS, SSMS"
+            },
+            {
+                Position: "Research Assistant",
+                When: "2016-Present",
+                Where: "Department of Psychiatry, University of Iowa",
+                Role: "Mobile and web apps designer and developer",
+                Responsibilities: [
+                "Design and develop light and modular solution for patient screening",
+                "Create application for Gene analysis"
+                ],
+                Technologies: "N​ode.js, AngularJS, MySQL"
             },
             {
                 Position: "Graduate Student Senate",
                 When: "2015-Present",
                 Where: "University of Iowa",
                 Role: "Informatics department representative",
-                Responsibility: "Discuss issues related to graduate and PhD students and help improve facilities for faculty and staff."
+                Responsibilities: [
+                "Discuss issues related to graduate and PhD student",
+                "Help improve facilities for faculty and staff."
+                ]
             },
             {
                 Position: "International Student Committee",
                 When: "2016-Present",
                 Where: "University of Iowa",
                 Role: "Chair",
-                Responsibility: "Help connect domestic and international students. Resolve any issues faced by international students. Negotiate with university to improve student life. And organize social hours for fun."
+                Responsibilities: [
+                "Help connect domestic and international students",
+                "Resolve any issues faced by international students",
+                "Negotiate with university to improve student life",
+                "And organize events and social hours for fun."
+                ]
             }],
             Technologies: [{
                 Title: ".Net Entity Framework",
@@ -240,6 +315,14 @@ function Constants() {
                 Title: "N​ode.js",
                 ImgName: "node.png"
             },
+            {
+                Title: "React.js",
+                ImgName: "reactjs.png"
+            },
+            {
+                Title: "Heroku",
+                ImgName: "heroku.png"
+            },           
             {
                 Title: "SharePoint 2013",
                 ImgName: "sharepoint.png"
@@ -328,7 +411,11 @@ function Constants() {
             {
                 Title: "AngularJS",
                 ImgName: "angularjs.png"
-            },
+            },            
+            {
+                Title: "Angular2",
+                ImgName: "angular2.png"
+            }, 
             {
                 Title: "SSMS",
                 ImgName: "sql.jpeg"
@@ -382,11 +469,20 @@ function Constants() {
                 ImgName: "cpp.png"
             },
             {
+                Title: "Microsoft Hololens",
+                ImgName: "hololens.png"
+            },
+            {
+                Title: "Unity",
+                ImgName: "unity.jpg"
+            },
+            
+            {
                 Title: "OpenGL",
                 ImgName: "opengl.jpg"
             }],
             Education: [{
-                Degree: "Master Information Science",
+                Degree: "Master of Science, Informatics",
                 Board: "Interdisciplinary Graduate Program in Informatics",
                 Institution: "University of Iowa",
                 Batch: "2015-2017",
@@ -415,40 +511,40 @@ function Constants() {
             }],
             Contacts: {
                 SocialMedia: [
-                    {
-                        Type: "LinkedIn",
-                        Link: "https://www.linkedin.com/in/maheshsasidharan"
-                    },
-                    {
-                        Type: "GitHub",
-                        Link: "https://github.com/MaheshSasidharan"
-                    },
-                    {
-                        Type: "Stackoverflow",
-                        Link: "http://stackoverflow.com/users/1161370/mahesh"
-                    },
-                    {
-                        Type: "Facebook",
-                        Link: "https://www.facebook.com/mahesh.sasidharan"
-                    },
-                    {
-                        Type: "Twitter",
-                        Link: "https://twitter.com/blinddoc"
-                    },
-                    {
-                        Type: "Google Plus",
-                        Link: "https://plus.google.com/u/0/111874564643552738091/posts"
-                    }
+                {
+                    Type: "LinkedIn",
+                    Link: "https://www.linkedin.com/in/maheshsasidharan"
+                },
+                {
+                    Type: "GitHub",
+                    Link: "https://github.com/MaheshSasidharan"
+                },
+                {
+                    Type: "Stackoverflow",
+                    Link: "http://stackoverflow.com/users/1161370/mahesh"
+                },
+                {
+                    Type: "Facebook",
+                    Link: "https://www.facebook.com/mahesh.sasidharan"
+                },
+                {
+                    Type: "Twitter",
+                    Link: "https://twitter.com/blinddoc"
+                },
+                {
+                    Type: "Google Plus",
+                    Link: "https://plus.google.com/u/0/111874564643552738091/posts"
+                }
                 ],
                 CV: [
-                    {
-                        Type: "CV",
-                        Link: "https://drive.google.com/open?id=0By_3UoPyNHEFYWRzYTM2TG56dmM"
-                    },
-                    {
-                        Type: "Resume",
-                        Link: "https://drive.google.com/open?id=0By_3UoPyNHEFVkpZRlYzQUJ6YjA"
-                    }
+                {
+                    Type: "Resume",
+                    Link: "https://drive.google.com/open?id=0By_3UoPyNHEFTWZYZ1lHR1FkNFE"
+                },
+                {
+                    Type: "Detailed Resume",
+                    Link: "https://drive.google.com/open?id=0By_3UoPyNHEFdTZCYnFGYnFMNW8"
+                }
                 ]
             }
         }

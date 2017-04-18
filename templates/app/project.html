@@ -1,66 +1,49 @@
-﻿<div class="MS_Personal">
+﻿<div class="MS_Project">
     <div class="MS_PageHeader">Projects</div>
-    <div class="jumbotron" ng-repeat="proj in pj.arrProjects">
-        <div class="MS_ContentContainer">
-            <div class="row NoPadding NoMargin">
-                <h2>
-                    <span class="glyphicon glyphicon-screenshot"></span>
-                    <textContent>{{proj.Title}}</textContent>
-                </h2>
+    <ul class="timeline" ng-repeat="proj in pj.arrProjects">
+        <li class="time-label">
+            <span class="bg-red">
+                {{proj.Title}}
+            </span>
+        </li>
+        <li>
+            <i class="fa fa-cogs bg-blue"></i>
+            <div class="timeline-item">
+                <h3 class="timeline-header skipClass"><a>{{proj.Role}}</a></h3>
             </div>
-            <div class="MS_InnerContentContainer">
-                <div class="row NoPadding NoMargin">
-                    <h3>
-                        <span class="glyphicon glyphicon-cog"></span>
-                        <textContent>{{proj.Role}}</textContent>
-                    </h3>
-                </div>
-                <div class="row NoPadding NoMargin">
-                    <h3>
-                        <span class="glyphicon glyphicon-qrcode"></span>
-                        <textContent>Technologies</textContent>
-                    </h3>
-                    <div class="MS_InnerContentContainer2">
-                        <div class="InlineBlock MS_Technology" ng-repeat="tech in proj.arrTechnology track by $index">
-                            <div class="techBG_Container">
-                                <img ng-src="Content/Images/technologies/{{tech.ImgName}}" />
-                            </div>
-                            <div class="techBG_Title" title="{{tech.Title}}">{{tech.Title}}</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row NoPadding NoMargin" ng-if="proj.Link">
-                    <h3>
-                        <span class="glyphicon glyphicon-screenshot"></span>
-                        <textContent>Links</textContent>
-                    </h3>
-                    <div class="MS_InnerContentContainer2">
-                        <div class="InlineBlock MS_Technology" ng-repeat="oLink in proj.Link track by $index">
-                            <div class="techBG_Container">
-                                <a class="" ng-href="{{oLink.Link}}" class="button-link" target="_blank">
-                                    <img ng-src="Content/Images/technologies/{{oLink.Type}}" />
-                                </a>
-                            </div>
-                            <div class="techBG_Title" title="{{tech.Title}}">{{oLink.Title}}</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row NoPadding NoMargin">
-                    <h3>
-                        <span ng-show="bShow" class="glyphicon glyphicon-star"></span>
-                        <span ng-show="!bShow" class="glyphicon glyphicon-star-empty"></span>
-                        <textContent class="MS_ShowHideHighlight" ng-click="bShow = !bShow">{{bShow ? 'Hide' : 'View'}} Highlights</textContent>
-                    </h3>
-                    <div class="MS_InnerContentContainer" ng-show="bShow">
-                        <ul>
-                            <li ng-repeat="res in proj.Responsibilities">
-                                <span class="glyphicon glyphicon-flag"></span>
-                                <h4>{{res}}</h4>
-                            </li>
-                        </ul>
+
+            <div class="timeline-item">
+                <h3 class="timeline-header"><b>Responsibilities</b></h3>
+                <div class="timeline-body">
+                    <div ng-repeat="res in proj.Responsibilities">
+                        <h4><span class="glyphicon glyphicon-flag"></span>&nbsp{{res}}</h4>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+            <div class="timeline-item">
+                <h3 class="timeline-header"><b>Technologies</b></h3>
+                <div class="timeline-body">
+                    <div class="InlineBlock MS_Technology" ng-repeat="tech in proj.arrTechnology track by $index">
+                        <div class="techBG_Container">
+                            <img ng-src="Content/Images/technologies/{{tech.ImgName}}" />
+                        </div>
+                        <div class="techBG_Title" title="{{tech.Title}}">{{tech.Title}}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="timeline-item" ng-if="proj.Link.length">
+                <h3 class="timeline-header"><b>Links</b></h3>
+                <div class="timeline-body">
+                    <div class="InlineBlock MS_Technology" ng-repeat="oLink in proj.Link track by $index">
+                        <div class="techBG_Container">
+                            <a class="" ng-href="{{oLink.Link}}" class="button-link" target="_blank">
+                                <img ng-src="Content/Images/technologies/{{oLink.Type}}" />
+                            </a>
+                        </div>
+                        <div class="techBG_Title" title="{{tech.Title}}">{{oLink.Title}}</div>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
 </div>

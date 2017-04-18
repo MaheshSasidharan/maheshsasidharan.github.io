@@ -1,4 +1,142 @@
-﻿
+﻿.navbar {
+  animation-duration: 2s;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+    from {
+        margin-top: -100%; 
+    }
+
+    to {
+        margin-top: 0%;
+    }
+}
+
+/* ------ */
+.MS_Landing {
+    transform: scale(0);
+}
+
+.MS_Landing {
+    animation: msLanding 1s forwards;
+    -webkit-animation: msLanding 1s forwards;
+    animation-delay: 1.5s;    
+    -webkit-animation-delay: 1.5s;
+    animation-timing-function: cubic-bezier(0, 0, 0, 1);
+    -webkit-animation-timing-function: cubic-bezier(0, 0, 0, 1);    
+}
+
+@keyframes msLanding {
+    0% {
+        -webkit-transform: rotateX(45deg) rotateY(60deg) scale(0);
+        transform: rotateX(45deg) rotateY(60deg) scale(0);
+        opacity: 0.5;
+    }
+
+    100% {
+        -webkit-transform: rotateX(0deg) rotateY(0deg) scale(1);
+        transform: rotateX(0deg) rotateY(0deg) scale(1);
+        opacity: 1;
+    }
+}
+
+/* ------ */
+
+.timeline:hover .time-label {
+    animation: none;
+    -webkit-animation: none;
+    letter-spacing: 12px;
+}
+
+.timeline .time-label {
+    transition: letter-spacing 4s ease-in;
+    letter-spacing: 8px;
+}
+/* -- */
+
+.timeline .time-label {
+    transition: letter-spacing 250ms;
+    /*animation: msPositionHeader 1.5s;
+    -webkit-animation: msPositionHeader 1.5s;
+    animation-timing-function: cubic-bezier(0.26, -0.26, 0.45, 0.94);
+    -webkit-animation-timing-function: cubic-bezier(0.26, -0.26, 0.45, 0.94); */
+}
+
+@keyframes msPositionHeader {
+    0% {
+        letter-spacing: 0px;
+    }
+
+    70% {
+        letter-spacing: 9px;
+    }
+
+    100% {
+        letter-spacing: 8px;
+    }
+}
+
+/* ------  */
+
+.timeline{
+    transition: transform 250ms cubic-bezier(0.26, -0.26, 0.45, 0.94);
+}
+
+.timeline:hover{
+   /*transform: rotateY(17deg) rotateZ(-0.2deg) scale(1.03);*/
+   transform: scale(1.02);
+}
+
+/* ------ */
+.timeline:hover li > i {
+    animation: none;
+    -webkit-animation: none;
+    top: 150px;
+}
+
+/* -- */
+
+.timeline li > i {
+    transition: top 250ms;
+    animation: msBounce 1.5s;
+    -webkit-animation: msBounce 1.5s;
+}
+
+@keyframes msBounce {
+  0% {
+      top: 150px;
+      animation-timing-function: ease-in;
+  }
+  23% {
+      top: 0px;
+      animation-timing-function: ease-out;
+  }
+  39% {
+      top: 70px;
+      animation-timing-function: ease-in;
+  }
+  54% {
+      top: 0px;
+      animation-timing-function: ease-out;
+  }
+  69% {
+      top: 24px;
+      animation-timing-function: ease-in;
+  }
+  85% {
+      top: 0px;
+      animation-timing-function: ease-out;
+  }
+  97% {
+      top: 3px;
+      animation-timing-function: ease-in;
+  }
+  100% {
+      top: 0;
+  }
+}
+
 /****************/
 
 @-webkit-keyframes InnerTileAnimation {

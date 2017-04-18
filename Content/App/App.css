@@ -17,7 +17,6 @@ bg {
     height: 100%;
     position: fixed;
     z-index: -1;
-    filter: blur(6px);
 }
 
 /*.ng-enter {

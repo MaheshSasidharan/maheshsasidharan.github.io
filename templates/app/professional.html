@@ -1,53 +1,51 @@
 ﻿<div class="MS_Professional">
     <div class="MS_PageHeader">Positions</div>
-    <div class="jumbotron" ng-repeat="proj in pr.arrPositions">
-        <div class="MS_ContentContainer">
-            <div class="row NoPadding NoMargin">
-                <h2 class="col-md-6">
-                    <span class="glyphicon glyphicon-user"></span>
-                    <textContent>{{proj.Position}}</textContent>
-                </h2>
-                <div class="col-md-offset-1 col-md-5">
-                    <h2 class="pull-right">
-                        <span class="glyphicon glyphicon-time"></span>
-                        <textContent>{{proj.When}}</textContent>
-                    </h2>
-                </div>
+    <ul class="timeline" ng-repeat="proj in pr.arrPositions">
+        <li class="time-label">
+            <span class="bg-blue">
+                {{proj.Position}}
+            </span>
+        </li>
+        <li>
+            <i class="fa fa-id-card-o bg-green"></i>
+            <div class="timeline-item">
+                <span class="time"><i class="fa fa-clock-o"></i>{{proj.When}} </span>
+                <h3 class="timeline-header skipClass"><a>{{proj.Where}}</a></h3>
             </div>
-            <div class="MS_InnerContentContainer">
-                <div class="row NoPadding NoMargin">
-                    <h3>
-                        <span class="glyphicon glyphicon-home"></span>
-                        <textContent>{{proj.Where}}</textContent>
-                    </h3>
+
+            <div class="timeline-item">
+
+                <h3 class="timeline-header"><b>Role</b></h3>
+                <div class="timeline-body">
+                    {{proj.Role}}
                 </div>
-                <div class="row NoPadding NoMargin">
-                    <h3>
-                        <span class="glyphicon glyphicon-cog"></span>
-                        <textContent>{{proj.Role}}</textContent>
-                    </h3>
-                </div>
-                <div class="row NoPadding NoMargin">
-                    <h3>
-                        <span class="glyphicon glyphicon-flag"></span>
-                        <textContent>{{proj.Responsibility}}</textContent>
-                    </h3>
-                </div>
-                <div class="row NoPadding NoMargin" ng-if="proj.Technologies">
-                    <h3>
-                        <span class="glyphicon glyphicon-qrcode"></span>
-                        <textContent>Technologies</textContent>
-                    </h3>
-                    <div class="MS_InnerContentContainer3">
-                        <div class="InlineBlock MS_Technology" ng-repeat="tech in proj.arrTechnology track by $index">
-                            <div class="techBG_Container">
-                                <img ng-src="Content/Images/technologies/{{tech.ImgName}}" />
-                            </div>
-                            <div class="techBG_Title" title="{{tech.Title}}">{{tech.Title}}</div>
-                        </div>
+
+              <!--   <h3 class="timeline-header"><b>Responsitbilities</b></h3>
+                <div class="timeline-body">
+                    {{proj.Responsibility}}
+                </div> -->
+
+
+            </div>
+            <div class="timeline-item">
+                <h3 class="timeline-header"><b>Responsibilities</b></h3>
+                <div class="timeline-body">
+                    <div ng-repeat="res in proj.Responsibilities">
+                        <h4><span class="glyphicon glyphicon-flag"></span>&nbsp{{res}}</h4>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+            <div class="timeline-item">
+                <h3 class="timeline-header" ng-if="proj.arrTechnology.length"><b>Technologies</b></h3>
+                <div class="timeline-body" ng-if="proj.arrTechnology.length">
+                    <div class="InlineBlock MS_Technology" ng-repeat="tech in proj.arrTechnology track by $index">
+                        <div class="techBG_Container">
+                            <img ng-src="Content/Images/technologies/{{tech.ImgName}}" />
+                        </div>
+                        <div class="techBG_Title" title="{{tech.Title}}">{{tech.Title}}</div>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
 </div>
