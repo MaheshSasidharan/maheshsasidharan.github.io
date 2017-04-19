@@ -524,18 +524,23 @@ function Constants() {
                     Link: "http://stackoverflow.com/users/1161370/mahesh"
                 },
                 {
-                    Type: "Facebook",
-                    Link: "https://www.facebook.com/mahesh.sasidharan"
-                },
-                {
-                    Type: "Twitter",
-                    Link: "https://twitter.com/blinddoc"
-                },
-                {
-                    Type: "Google Plus",
-                    Link: "https://plus.google.com/u/0/111874564643552738091/posts"
-                }
-                ],
+                    Type: "Merit Pages",
+                    Link: "https://meritpages.com/maheshsasidharan"
+                }],
+                
+                // {
+                //     Type: "Facebook",
+                //     Link: "https://www.facebook.com/mahesh.sasidharan"
+                // },
+                // {
+                //     Type: "Twitter",
+                //     Link: "https://twitter.com/blinddoc"
+                // },
+                // {
+                //     Type: "Google Plus",
+                //     Link: "https://plus.google.com/u/0/111874564643552738091/posts"
+                // }
+                // ],
                 CV: [
                 {
                     Type: "Resume",
