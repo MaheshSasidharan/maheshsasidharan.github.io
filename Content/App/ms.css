@@ -380,3 +380,9 @@
     .MS_PageHeader:hover span {
         transform: rotateY(180deg);
     }
+
+    @media (max-width: 480px) {
+      .MS_PageHeader  {
+        font-size: 60px;
+        }
+    }
