@@ -73,6 +73,10 @@
 .MS_Landing {
     bottom: 0px;
     position: absolute;
+    background: -webkit-radial-gradient(closest-side at 50% 35%, rgba(256,256,256,0.8), rgba(256,256,256,0.6),  rgba(256,256,256,0));
+    background: -o-radial-gradient(closest-side at 50% 35%, rgba(256,256,256,0.8), rgba(256,256,256,0.6),  rgba(256,256,256,0));
+    background: -moz-radial-gradient(closest-side at 50% 35%, rgba(256,256,256,0.8), rgba(256,256,256,0.6),  rgba(256,256,256,0));
+    background: radial-gradient(closest-side at 50% 35%, rgba(256,256,256,0.8), rgba(256,256,256,0.6),  rgba(256,256,256,0));
 }
 
 .MS_Landing .jumbotron {
@@ -367,4 +371,12 @@
 
     .timeline .timeline-header:not(.skipClass) {
         background: #e0e0e0 !important;
+    }
+
+    .timeline-header a {
+        text-decoration: none;
+    }
+
+    .MS_PageHeader:hover span {
+        transform: rotateY(180deg);
     }

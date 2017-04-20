@@ -4,7 +4,7 @@
 function ProfessionalCtrl(SP) {
 
     var pr = this;
-
+    pr.oTitle = SP.CR.GetCharStyleObject("Positions");
     pr.arrPositions = SP.Con.MSPortfolio.Positions;
 
     pr.arrPositions.forEach(function (oItem) {

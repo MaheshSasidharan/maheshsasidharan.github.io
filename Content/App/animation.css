@@ -13,6 +13,16 @@
   }
 }
 
+/* --------- */
+
+.nav>li:hover {
+  transform: scale(1.03);
+}
+
+.nav>li:hover {
+  transition: transform ease-in 0.2s;
+}
+
 /* ------ */
 .MS_Landing {
   transform: scale(0);
@@ -201,5 +211,33 @@
 
   100% {
     -webkit-transform: scale(1,1);
+  }
+}
+
+/**************/
+
+.MS_PageHeader span{
+  display: inline-block;
+  animation: msHeaderLetter 2.5s infinite;
+  -webkit-animation: msHeaderLetter 2.5s infinite;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-timing-function: ease-in-out;
+  transform: scale(0.75, 0.75);
+}
+
+@keyframes msHeaderLetter {
+  20% {
+    -webkit-transform: scale(0.75, 0.75);
+    transform: scale(0.75, 0.75);
+  }
+
+  50% {
+    -webkit-transform: scale(1,1);
+    transform: scale(1,1);
+  }
+
+  80% {
+    -webkit-transform: scale(0.75, 0.75);
+    transform: scale(0.75, 0.75);
   }
 }

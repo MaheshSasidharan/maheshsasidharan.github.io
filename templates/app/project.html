@@ -1,5 +1,6 @@
 ﻿<div class="MS_Project">
-    <div class="MS_PageHeader">Projects</div>
+    <div class="MS_PageHeader">
+    <span ng-repeat="letter in pj.oTitle track by $index" ng-style="letter.oStyle" class="MS_PageSubHeader"> {{ letter.sChar }} </span></div>
     <ul class="timeline" ng-repeat="proj in pj.arrProjects">
         <li class="time-label">
             <span class="bg-red">

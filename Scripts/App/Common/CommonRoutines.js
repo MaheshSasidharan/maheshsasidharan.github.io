@@ -1,6 +1,6 @@
 ﻿MSPortfolio
 
-    .factory('Factory_CommonRoutines', [CommonRoutines])
+.factory('Factory_CommonRoutines', [CommonRoutines])
 
 function CommonRoutines() {
     var oCommonRoutine = {
@@ -45,31 +45,31 @@ function CommonRoutines() {
             bgc = "White";
             switch (color) {
                 case "success":
-                    color = "Green";
-                    bgc = "LimeGreen";
-                    break;
+                color = "Green";
+                bgc = "LimeGreen";
+                break;
                 case "info":
-                    color = "DodgerBlue";
-                    bgc = "Turquoise";
-                    break;
+                color = "DodgerBlue";
+                bgc = "Turquoise";
+                break;
                 case "error":
-                    color = "Red";
-                    bgc = "Black";
-                    break;
+                color = "Red";
+                bgc = "Black";
+                break;
                 case "start":
-                    color = "OliveDrab";
-                    bgc = "PaleGreen";
-                    break;
+                color = "OliveDrab";
+                bgc = "PaleGreen";
+                break;
                 case "warning":
-                    color = "Tomato";
-                    bgc = "Black";
-                    break;
+                color = "Tomato";
+                bgc = "Black";
+                break;
                 case "end":
-                    color = "Orchid";
-                    bgc = "MediumVioletRed";
-                    break;
+                color = "Orchid";
+                bgc = "MediumVioletRed";
+                break;
                 default:
-                    color = color;
+                color = color;
             }
 
             if (typeof msg == "object") {
@@ -87,7 +87,7 @@ function CommonRoutines() {
             }
             name = name.replace(/[\[\]]/g, "\\$&");
             var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-                results = regex.exec(url);
+            results = regex.exec(url);
             if (!results) return null;
             if (!results[2]) return '';
             return decodeURIComponent(results[2].replace(/\+/g, " "));
@@ -142,6 +142,23 @@ function CommonRoutines() {
                 }
                 return y;
             }
+        },
+        GetStyle: function(){
+            var nDelay = Math.random() * 2;
+            var animDelay = nDelay + "s";
+            var x = {
+                "animation-delay" : animDelay,
+                "-webkit-animation-delay": animDelay
+            }
+            return x;
+        },
+        GetCharStyleObject: function(sTitle){
+            return sTitle.split('').map(function(sChar){
+                return {
+                    sChar: sChar,
+                    oStyle: oCommonRoutine.GetStyle()
+                }
+            });
         }
     }
 

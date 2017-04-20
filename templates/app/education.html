@@ -1,5 +1,7 @@
 ﻿<div class="MS_Education">
-    <div class="MS_PageHeader">Education</div>
+    <div class="MS_PageHeader">
+      <span ng-repeat="letter in ed.oTitle track by $index" ng-style="letter.oStyle" class="MS_PageSubHeader"> {{ letter.sChar }} </span>
+    </div>
     <ul class="timeline" ng-repeat="proj in ed.arrEducation">
         <li class="time-label">
             <span class="bg-light-blue">
